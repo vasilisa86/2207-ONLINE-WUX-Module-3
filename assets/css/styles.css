@@ -1,0 +1,102 @@
+/* Main Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Oswald', sans-serif;
+    /*scroll-behavior: smooth;*/
+}
+
+.form__input,
+.form__textarea,
+.form__select,
+.form__button {
+    display: block;
+    text-transform: capitalize;
+
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    text-transform: capitalize;
+}
+
+.form__input,
+.form__select {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+}
+
+.form__button {
+    width: 100%;
+    margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fbf7ee;
+    border: 1px solid black;
+    border-color: #e7e7e7;
+    border-radius: 10px;
+    padding: 15px 32px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center
+}
+
+    .form__button:hover {
+        background-color: #2A55B1;
+        border-color: 1px solid rgb(180, 207, 231);
+        color: #fbf7ee;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+.form__textarea {
+    width: 100%;
+    height: 215px;
+    padding: 5px 10px;
+}
+
+.form__radio {
+    margin: 20px 3px;
+    margin-top: 15px;
+}
+
+/* input.form__radio {
+    display: inline-block;
+} */
+.add__input {
+    width: 50%;
+    height: 45px;
+    padding: 10px;
+}
+
+.add__button {
+    width: 45%;
+    margin-top: 15px;
+    background-color: rgb(180, 207, 231);
+    color: rgb(23, 65, 94);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 32px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.add__button:hover {
+    background-color: rgb(36, 78, 113);
+    border-color: 1px solid rgb(180, 207, 231);
+    color: rgb(255, 255, 255);
+}
+
+.map {
+    width: 100%;
+    height: 250px;
+    margin-top: 15px;
+}
