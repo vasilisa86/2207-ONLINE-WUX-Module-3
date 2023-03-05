@@ -9,7 +9,7 @@
 }
 
 .background-pages {
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 1)), url("../images/background-book-now.jpg") center no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 1)), url("../images/background-app.jpg") center no-repeat;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;

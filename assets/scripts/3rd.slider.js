@@ -8,15 +8,18 @@ const btnRight = document.querySelector('.slider__btn-right');
 const sliderImages = [
     {
         src: './assets/images/background.jpg',
-        text: 'Enjoy the Omaha beach sunset'
+        // The image coppied from https://in.pinterest.com/pin/690176711620840342/ and used only for development purposes
+        text: 'Buying & Selling Books'
     },
     {
         src: './assets/images/background2.jpg',
-        text: 'Visit Tawharanui Regional Park'
+        // The image coppied from https://www.freepik.com/free-photo/smiling-girl-sitting-table-reading_1290852.htm#page=71&query=library%20search&position=0&from_view=keyword&track=ais and used only for development purposes
+        text: 'Interact and Collaborate'
     },
     {
         src: './assets/images/background3.jpg',
-        text: 'Taste Matakana Farmers Market'
+        // The image coppied from https://www.freepik.com/free-photo/smiling-girl-sitting-table-reading_1290852.htm#page=71&query=library%20search&position=0&from_view=keyword&track=ais and used only for development purposes
+        text: 'You wont be dissappointed'
     }
 ];
 
