@@ -215,42 +215,42 @@
                         <label for="description">Description:</label>
                         <textarea id="description" name="description"></textarea><br>
 
-                                                                                 <div class="col col-3 col-s-3">
-                                                                                     <label>
-                                                                                         <input type="checkbox" id="durationStay" name="durationStay" value="durationStay">
-                                                                                         Duration Stay is 2-5 nights
-                                                                                     </label>
-                                                                                 </div>
-                                                                                 <div class="col col-3 col-s-3">
-                                                                                     <label>
-                                                                                         <input type="checkbox" id="guestsAmount" name="guestsAmount" value="guestsAmount">
-                                                                                         Guests Amount is 1-2 guests
-                                                                                     </label>
-                                                                                 </div>
-                                                                                 <div class="col col-3 col-s-3">
-                                                                                     <label>
-                                                                                         <input type="checkbox" id="allPrices" name="allPrices" value="allPrices">
-                                                                                         All Prices is less than NZ$200
-                                                                                     </label>
-                                                                                 </div>
-                                                                                 <div class="col col-3 col-s-3">
-                                                                                     <label>
-                                                                                         <input type="checkbox" id="breakfastIncluded" name="breakfastIncluded" value="breakfastIncluded">
-                                                                                         Breakfast is included
-                                                                                     </label>
-                                                                                 </div>
+                        <div class="col col-3 col-s-3">
+                            <label>
+                                <input type="checkbox" id="durationStay" name="durationStay" value="durationStay">
+                                Duration Stay is 2-5 nights
+                            </label>
+                        </div>
+                        <div class="col col-3 col-s-3">
+                            <label>
+                                <input type="checkbox" id="guestsAmount" name="guestsAmount" value="guestsAmount">
+                                Guests Amount is 1-2 guests
+                            </label>
+                        </div>
+                        <div class="col col-3 col-s-3">
+                            <label>
+                                <input type="checkbox" id="allPrices" name="allPrices" value="allPrices">
+                                All Prices is less than NZ$200
+                            </label>
+                        </div>
+                        <div class="col col-3 col-s-3">
+                            <label>
+                                <input type="checkbox" id="breakfastIncluded" name="breakfastIncluded" value="breakfastIncluded">
+                                Breakfast is included
+                            </label>
+                        </div>
 
                         <button type="button" onclick="addHotelSection()">Add Hotel Section</button>
                     </div>
                 </form>
             </div>
-            
+
             <!--======== Instant Search Filter Results ========-->
             <div class="row filter-cat-results" id="filterresults">
-               
+
                 <hotels id="hotels-container">
 
-                    <section class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga1" data-cat3="cat-pr1" data-cat4="cat-bin">
+                    <section id="hotel1" class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga1" data-cat3="cat-pr1" data-cat4="cat-bin">
 
                         <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
 
@@ -289,15 +289,30 @@
                             </dsc>
 
                         </p>
+                        <!--======== Comments Section ========-->
+                        <br>
+                        <h3>Comments</h3>
+                        <ul class="comments"></ul>
+                        <form class="comment-form">
+                            <label>Name:</label>
+                            <input type="text" name="name">
+                            <label>Comment:</label>
+                            <textarea name="comment"></textarea>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <br>
+                        <br>
+                        <br>
                         <br>
                         <br>
                         <br>
                         <button class="btn-sec checkavail">Check Availability</button>
 
+
                     </section>
 
 
-                    <section class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga2" data-cat3="cat-pr2" data-cat4="cat-bnin">
+                    <section id="hotel2" class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga2" data-cat3="cat-pr2" data-cat4="cat-bnin">
 
 
                         <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
@@ -335,6 +350,20 @@
                             </dsc>
 
                         </p>
+                        <!--======== Comments Section ========-->
+                        <br>
+                        <h3>Comments</h3>
+                        <ul class="comments"></ul>
+                        <form class="comment-form">
+                            <label>Name:</label>
+                            <input type="text" name="name">
+                            <label>Comment:</label>
+                            <textarea name="comment"></textarea>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <br>
+                        <br>
+                        <br>
                         <br>
                         <br>
                         <br>
@@ -342,7 +371,7 @@
 
                     </section>
 
-                    <section class="f-cat" data-cat="cat-ds1" data-cat2="cat-ga1" data-cat3="cat-pr3" data-cat4="cat-bnin">
+                    <section id="hotel3" class="f-cat" data-cat="cat-ds1" data-cat2="cat-ga1" data-cat3="cat-pr3" data-cat4="cat-bnin">
 
 
                         <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
@@ -380,6 +409,20 @@
                             </dsc>
 
                         </p>
+                        <!--======== Comments Section ========-->
+                        <br>
+                        <h3>Comments</h3>
+                        <ul class="comments"></ul>
+                        <form class="comment-form">
+                            <label>Name:</label>
+                            <input type="text" name="name">
+                            <label>Comment:</label>
+                            <textarea name="comment"></textarea>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <br>
+                        <br>
+                        <br>
                         <br>
                         <br>
                         <br>
@@ -815,6 +858,7 @@
     <script type='text/javascript' src="./assets/scripts/book.now.filter.js"></script>
     <script type='text/javascript' src="./assets/scripts/book.now.form.js"></script>
     <script type='text/javascript' src="./assets/scripts/AddSection.js"></script>
+    <script type='text/javascript' src="./assets/scripts/app.comments.js"></script>
     <script src="./assets/scripts/scroll.js"></script>
     <script src="./assets/scripts/navi.js"></script>
     <script src="./assets/scripts/top.js"></script>
