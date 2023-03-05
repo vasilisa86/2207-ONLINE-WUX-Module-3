@@ -2,10 +2,10 @@
 <html lang="zxx">
 <head>
     <meta charset="utf-8" />
-    <meta name="description" content="2207-ONLINE-WUX-Module-2-VO" />
-    <meta name="keywords" content="Vasilisa, italy, food, hotels, online" />
+    <meta name="description" content="2207-ONLINE-WUX-Module-3" />
+    <meta name="keywords" content="Buy, Sell, app, order, online" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2207-ONLINE-WUX-Module-2-VO</title>
+    <title>2207-ONLINE-WUX-Module-3</title>
     <!--======= Main CSS =======-->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <!--======= Icons =======-->
@@ -30,7 +30,7 @@
                     <a href="index.html">HOME </a>
                     <a href="about.html">ABOUT</a>
                     <a href="contact.html">CONTACT</a>
-                    <a href="book-now.html">BOOK NOW</a>
+                    <a href="app.html">NICHE APP</a>
                     <span class="close disp"><i class="bx bx-x"></i></span>
                 </ul>
 
@@ -47,7 +47,7 @@
         </nav>
 
         <!--======== Book Now Title ========-->
-        <div class="background-pages title"> <a href="index.html">HOME</a> / BOOK NOW</div>
+        <div class="background-pages title"> <a href="index.html">HOME</a> / NICHE APP</div>
 
         <!--======== login Form ========-->
         <div class="wrapper">
@@ -207,11 +207,48 @@
                         <button class="btn-flt" id="filterbutton">Scroll to Results</button>
                     </div>
                 </form>
-            </div>
+                <form>
+                    <div class="row no-margin">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title"><br>
 
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description"></textarea><br>
+
+                                                                                 <div class="col col-3 col-s-3">
+                                                                                     <label>
+                                                                                         <input type="checkbox" id="durationStay" name="durationStay" value="durationStay">
+                                                                                         Duration Stay is 2-5 nights
+                                                                                     </label>
+                                                                                 </div>
+                                                                                 <div class="col col-3 col-s-3">
+                                                                                     <label>
+                                                                                         <input type="checkbox" id="guestsAmount" name="guestsAmount" value="guestsAmount">
+                                                                                         Guests Amount is 1-2 guests
+                                                                                     </label>
+                                                                                 </div>
+                                                                                 <div class="col col-3 col-s-3">
+                                                                                     <label>
+                                                                                         <input type="checkbox" id="allPrices" name="allPrices" value="allPrices">
+                                                                                         All Prices is less than NZ$200
+                                                                                     </label>
+                                                                                 </div>
+                                                                                 <div class="col col-3 col-s-3">
+                                                                                     <label>
+                                                                                         <input type="checkbox" id="breakfastIncluded" name="breakfastIncluded" value="breakfastIncluded">
+                                                                                         Breakfast is included
+                                                                                     </label>
+                                                                                 </div>
+
+                        <button type="button" onclick="addHotelSection()">Add Hotel Section</button>
+                    </div>
+                </form>
+            </div>
+            
             <!--======== Instant Search Filter Results ========-->
             <div class="row filter-cat-results" id="filterresults">
-                <hotels>
+               
+                <hotels id="hotels-container">
 
                     <section class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga1" data-cat3="cat-pr1" data-cat4="cat-bin">
 
@@ -777,6 +814,7 @@
     <script type='text/javascript' src="./assets/scripts/bootstrap.min.js"></script>
     <script type='text/javascript' src="./assets/scripts/book.now.filter.js"></script>
     <script type='text/javascript' src="./assets/scripts/book.now.form.js"></script>
+    <script type='text/javascript' src="./assets/scripts/AddSection.js"></script>
     <script src="./assets/scripts/scroll.js"></script>
     <script src="./assets/scripts/navi.js"></script>
     <script src="./assets/scripts/top.js"></script>
