@@ -233,57 +233,49 @@
 
                 <button type="submit">Create Book</button>
             </form>
-            <div id="preview-section"></div>
+
 
 
 
             <!--======== Instant Search Filter Results ========-->
-            <div>
+            <div class="row filter-cat-results" id="filterresults">
 
                 <books id="books-container">
 
 
-                    <section>
-                        <!--The image copied from https://www.paperplus.co.nz/ and used only for development purposes-->
+                    <section class="f-cat" data-cat="cat-ds1" data-cat2="cat-ga1" data-cat3="cat-pr1" data-cat4="cat-bnin">
+                        <!--The image coppied from https://www.paperplus.co.nz/ and used only for development purposes-->
+
                         <img src="./assets/images/book1.jpg" height="330">
                         <br>
+
                         <div class="row">
                             <div class="col col-6 col-s-6">
                                 <p><tl><span id="book-title">The Great Gatsby</span></tl></p>
                             </div>
+
                             <div class="col-6 col-s-6">
                                 <p><prc><span id="book-price">15.99</span></prc></p>
                             </div>
                         </div>
+                        <p>
+                            <dsc>
+                                <p>Author: <span id="book-author"></span></p>
+                                <p>Genre: <span id="book-genre"></span></p>
+                                <p>Owner: <span id="book-owner"></span></p>
+                            </dsc>
 
-                        <dsc>
-                            <p>Author: <span id="book-author"></span></p>
-                            <p>Genre: <span id="book-genre"></span></p>
-                            <p>Owner: <span id="book-owner"></span></p>
-
-                            <p>
-                                Rating:
-                                <opts>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </opts>
-
-                            </p>
-
-
-                        </dsc>
-
+                        </p>
                         <br>
-                        <button class="btn my-cart-btn">Add to Cart</button>
+                        <br>
+                        <br>
+                        <button class="btn my-cart-btn" data-id="41" data-name="The Great Gatsby" data-price="15.99" data-quantity="1" data-image="./assets/images/tiramisu.jpg">Add to Cart</button>
                         <button class="btn">Book Details</button>
+
                     </section>
 
-
-                    <section>
-                        <!--The image copied from https://www.paperplus.co.nz/ and used only for development purposes-->
+                    <section class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga2" data-cat3="cat-pr2" data-cat4="cat-bnin">
+                        <!--The image coppied from https://www.paperplus.co.nz/ and used only for development purposes-->
                         <img src="./assets/images/book.jpg" height="330">
                         <br>
                         <div class="row">
@@ -294,29 +286,17 @@
                                 <p><prc><span id="book-price">9.99</span></prc></p>
                             </div>
                         </div>
-
-                        <dsc>
-                            <p>Author: <span id="book-author">NewBookAuthor</span></p>
-                            <p>Genre: <span id="book-genre">NewGenre</span></p>
-                            <p>Owner: <span id="book-owner">NewOwner</span></p>
-
-                            <p>
-                                Rating:
-                                <opts>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </opts>
-
-                            </p>
-
-
-                        </dsc>
-
+                        <p>
+                            <dsc>
+                                <p>Author: <span id="book-author">New Book Author</span></p>
+                                <p>Genre: <span id="book-genre">New Book Genre</span></p>
+                                <p>Owner: <span id="book-owner">New Book Owner</span></p>
+                            </dsc>
+                        </p>
                         <br>
-                        <button class="btn my-cart-btn">Add to Cart</button>
+                        <br>
+                        <br>
+                        <button class="btn my-cart-btn" data-id="42" data-name="New Book Title" data-price="9.99" data-quantity="1" data-image="./assets/images/tiramisu.jpg">Add to Cart</button>
                         <button class="btn">Book Details</button>
                     </section>
 
@@ -337,8 +317,8 @@
     <script type='text/javascript' src="./assets/scripts/jquery-2.2.3.min.js"></script>
     <script type='text/javascript' src="./assets/scripts/jquery-ui.1.12.1.min.js"></script>
     <script type='text/javascript' src="./assets/scripts/bootstrap.min.js"></script>
-    <!--<script type='text/javascript' src="./assets/scripts/book.now.filter.js"></script>
-    <script type='text/javascript' src="./assets/scripts/book.now.form.js"></script>-->
+    <script type='text/javascript' src="./assets/scripts/book.now.filter.js"></script>
+    <script type='text/javascript' src="./assets/scripts/book.now.form.js"></script>
     <script type='text/javascript' src="./assets/scripts/app.full.v2.js"></script>
     <script src="./assets/scripts/scroll.js"></script>
     <script src="./assets/scripts/navi.js"></script>

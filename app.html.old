@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="2207-ONLINE-WUX-Module-3" />
+    <meta name="keywords" content="Buy, Sell, app, order, online" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2207-ONLINE-WUX-Module-3</title>
+    <!--======= Main CSS =======-->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <!--======= Icons =======-->
+    <link rel="icon" href="./assets/images/icon.png" />
+    <!--======= Bicons =======-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
+    <!--======= Font Awesome =======-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+
+<body>
+    <!--======= Header =======-->
+    <header class="header">
+        <nav class="navi-block">
+            <div class="row disp container">
+                <a href="index.html" class="logo disp">
+                    <img src="./assets/images/logo.png" alt="logo" />
+                </a>
+
+                <ul class="navi-list disp">
+                    <a href="index.html">HOME </a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html">CONTACT</a>
+                    <a href="app.html">NICHE APP</a>
+                    <span class="close disp"><i class="bx bx-x"></i></span>
+                </ul>
+
+                <div class="col disp">
+                    <a class="btn login">Login In</a>
+                </div>
+
+                <!--====== Responsive menu  =========-->
+                <div class="responsemenu disp">
+                    <i class="bx bx-menu"></i>
+
+                </div>
+            </div>
+        </nav>
+
+        <!--======== Book Now Title ========-->
+        <div class="background-pages title"> <a href="index.html">HOME</a> / NICHE APP</div>
+
+        <!--======== login Form ========-->
+        <div class="wrapper">
+            <form action="" class="form">
+                <h2>LOGIN IN</h2>
+
+                <div class="control">
+                    <label for="">Enter Email:</label>
+                    <input type="email" placeholder="Enter Your Email" />
+                </div>
+                <div class="control">
+                    <label for="">Password:</label>
+                    <input type="password" placeholder="Password" />
+                </div>
+                <div class="checkbox disp">
+                    <input type="checkbox" />
+                    <span>Remember Me</span>
+                </div>
+                <button class="btn">Login In</button>
+                <div class="links">
+                    <span>Forgot Password? <a href="">Click Here</a></span>
+                    <span>Don't Have An Account? <a href="">Create One</a></span>
+                </div>
+            </form>
+
+            <div class="close-form">
+                <i class="bx bx-x"></i>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="container">
+        <!--======== Check Availability Form ========-->
+        <div class="wrapper">
+            <form action="" class="form">
+                <h2>Check Availability</h2>
+                <div class="control">
+                    <label for="">Property Name</label>
+                    <select id="Property" name="Property" required>
+                        <option value="property name">Choose property name</option>
+                        <option value="Bridgehouse Lodge">Bridgehouse Lodge</option>
+                        <option value="Northridge Country Lodge">Northridge Country Lodge</option>
+                        <option value="Sugarloaf Lodge">Sugarloaf Lodge</option>
+                        <option value="Waves Motel">Waves Motel</option>
+                        <option value="Warkworth Lodge">Warkworth Lodge</option>
+                        <option value="Plume Villas">Plume Villas</option>
+                        <option value="Walton Park Motor Lodge">Walton Park Motor Lodge</option>
+                        <option value="Tracy's Boutique BnB Farmstay">Tracy's Boutique BnB Farmstay</option>
+                        <option value="Aotearoa Surf Eco Pods">Aotearoa Surf Eco Pods</option>
+                        <option value="Kawai Purapura Retreat Centre">Kawai Purapura Retreat Centre</option>
+                        <option value="Castle Court Motel">Castle Court Motel</option>
+                        <option value="Mangawhai Retreat Apartments">Mangawhai Retreat Apartments</option>
+
+                    </select>
+                </div>
+                <div class="control">
+                    <label for="">First Name:</label>
+                    <input type="text" placeholder="Enter Your First Name" required />
+                </div>
+                <div class="control">
+                    <label for="">Last Name:</label>
+                    <input type="text" placeholder="Enter Your Last Name" required />
+                </div>
+                <div class="control">
+                    <label for="">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" required />
+                </div>
+
+                <div class="control">
+                    <label for="">Enter Email:</label>
+                    <input type="email" placeholder="Enter Your Email" />
+                </div>
+                <div class="control">
+                    <label for="">Card Number</label>
+                    <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="Enter Credit Card Number">
+                </div>
+                <div class="control">
+                    <label for="">Card Name:</label>
+                    <input type="text" placeholder="Enter Name on the Credit Card" required />
+                </div>
+                <div class="control">
+                    <label for="">CVV</label>
+                    <input type="number" id="cvv" placeholder="Enter Name CVV digits" />
+                </div>
+                <button class="btn">Book Now</button>
+            </form>
+
+            <div class="close-ca-form">
+                <i class="bx bx-x"></i>
+            </div>
+        </div>
+        <!--======== Instant Search Filter ========-->
+        <div class="filtering">
+            <div class="filter-form">
+                <form>
+                    <div class="row no-margin">
+                        <div class="col-2">
+                            <div class="form-header">
+                                <h2>Instant Search</h2>
+                            </div>
+                        </div>
+                        <div class="col-8">
+
+                            <div class="filter-cat">
+                                <div class="col col-3 col-s-3">
+                                    <div class="form-group">
+                                        <span class="form-label">Duration Stay</span>
+                                        <select class="form-control cat1">
+                                            <option value="cat-all">Any Available</option>
+                                            <option value="cat-ds1">1-2 nights</option>
+                                            <option value="cat-ds2">2-5 nights</option>
+                                            <option value="cat-ds3">5 and more nights</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                                <div class="col col-3 col-s-3">
+                                    <div class="form-group">
+                                        <span class="form-label">Guests Amount</span>
+                                        <select class="form-control cat2">
+                                            <option value="cat-all">Any amount</option>
+                                            <option value="cat-ga1">1-2</option>
+                                            <option value="cat-ga2">2-4</option>
+                                            <option value="cat-ga3">4-6</option>
+                                            <option value="cat-ga4">6 and more</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                                <div class="col col-3 col-s-3">
+                                    <div class="form-group">
+                                        <span class="form-label">Price Range</span>
+                                        <select class="form-control cat3">
+                                            <option value="cat-all">All Prices</option>
+                                            <option value="cat-pr1">less NZ$200</option>
+                                            <option value="cat-pr2">NZ$200-NZ$300</option>
+                                            <option value="cat-pr3">NZ$300-NZ$400</option>
+                                            <option value="cat-pr4">NZ$400 more</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                                <div class="col col-3 col-s-3">
+                                    <div class="form-group">
+                                        <span class="form-label">Breakfast</span>
+                                        <select class="form-control cat4">
+                                            <option value="cat-all">Any Options</option>
+                                            <option value="cat-bin">Included</option>
+                                            <option value="cat-bnin">Not Included</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-flt" id="filterbutton">Scroll to Results</button>
+                    </div>
+                </form>
+                <form>
+                    <div class="row no-margin">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title"><br>
+
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description"></textarea><br>
+
+                        <div class="col col-3 col-s-3">
+                            <label>
+                                <input type="checkbox" id="durationStay" name="durationStay" value="durationStay">
+                                Duration Stay is 2-5 nights
+                            </label>
+                        </div>
+                        <div class="col col-3 col-s-3">
+                            <label>
+                                <input type="checkbox" id="guestsAmount" name="guestsAmount" value="guestsAmount">
+                                Guests Amount is 1-2 guests
+                            </label>
+                        </div>
+                        <div class="col col-3 col-s-3">
+                            <label>
+                                <input type="checkbox" id="allPrices" name="allPrices" value="allPrices">
+                                All Prices is less than NZ$200
+                            </label>
+                        </div>
+                        <div class="col col-3 col-s-3">
+                            <label>
+                                <input type="checkbox" id="breakfastIncluded" name="breakfastIncluded" value="breakfastIncluded">
+                                Breakfast is included
+                            </label>
+                        </div>
+
+                        <button type="button" onclick="addHotelSection()">Add Hotel Section</button>
+                    </div>
+                </form>
+            </div>
+
+            <!--======== Instant Search Filter Results ========-->
+            <div class="row filter-cat-results" id="filterresults">
+
+                <hotels id="hotels-container">
+
+                    <section id="hotel1" class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga1" data-cat3="cat-pr1" data-cat4="cat-bin">
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel1.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Bridgehouse Lodge</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$175</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                Renovated in October 2016, Bridgehouse Lodge overlooks the Mahurangi River, an 8-minute drive from Matakana Coast Wine Country.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.66022878885272%2C-36.398755137344224%2C174.66376930475238%2C-36.396922185874146&amp;layer=mapnik&amp;marker=-36.397838667012714%2C174.66199904680252"></iframe>
+                                <br>16 Elizabeth Street, Warkworth, 0910
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-dollar-sign"></i> Best price<br>
+                                    <i class="fas fa-coffee"></i> Breakfast included<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-user"></i> Single rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <!--======== Comments Section ========-->
+                        <br>
+                        <h3>Comments</h3>
+                        <ul class="comments"></ul>
+                        <form class="comment-form">
+                            <label>Name:</label>
+                            <input type="text" name="name">
+                            <label>Comment:</label>
+                            <textarea name="comment"></textarea>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+
+                    </section>
+
+
+                    <section id="hotel2" class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga2" data-cat3="cat-pr2" data-cat4="cat-bnin">
+
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel2.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Northridge Country Lodge</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$267</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                A great stay at Northridge Country Lodge in Wainui can include a round of golf at the 9-hole course. Guests will have free perks such as WiFi and self-parking. A terrace and a garden are other highlights.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.65313971042636%2C-36.59979054699233%2C174.65668022632602%2C-36.597962348063746&amp;layer=mapnik&amp;marker=-36.59887645294318%2C174.65490996837616"></iframe>
+                                <br>379 Wainui Rd, Wainui, Auckland, 0992
+                                <br><br>
+                                <opts>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-users"></i> Family rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <!--======== Comments Section ========-->
+                        <br>
+                        <h3>Comments</h3>
+                        <ul class="comments"></ul>
+                        <form class="comment-form">
+                            <label>Name:</label>
+                            <input type="text" name="name">
+                            <label>Comment:</label>
+                            <textarea name="comment"></textarea>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+
+                    <section id="hotel3" class="f-cat" data-cat="cat-ds1" data-cat2="cat-ga1" data-cat3="cat-pr3" data-cat4="cat-bnin">
+
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel3.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Sugarloaf Lodge</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$310</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                Enjoy your visit to Matakana with a stay at Sugarloaf Lodge. Guests looking to stay active can experience the nearby surfing/body boarding, and free perks include WiFi, self-parking and continental breakfast daily between 8:30 AM and 10 AM.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.72679853439334%2C-36.338692163726%2C174.730339050293%2C-36.336857796723606&amp;layer=mapnik&amp;marker=-36.33777606593518%2C174.72856879234314"></iframe>
+                                <br>1068 Leigh Road, Matakana, 0948
+                                <br><br>
+                                <opts>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-user"></i> Single rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <!--======== Comments Section ========-->
+                        <br>
+                        <h3>Comments</h3>
+                        <ul class="comments"></ul>
+                        <form class="comment-form">
+                            <label>Name:</label>
+                            <input type="text" name="name">
+                            <label>Comment:</label>
+                            <textarea name="comment"></textarea>
+                            <button type="submit">Submit</button>
+                        </form>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+
+
+                    <section class="f-cat" data-cat="cat-ds3" data-cat2="cat-ga2" data-cat3="cat-pr1" data-cat4="cat-bnin">
+
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel4.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Waves Motel</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$199</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                When visiting Orewa, Waves Motel is a great choice to consider. Guests will have free perks such as WiFi and self-parking. Fellow travellers like the beach and shopping.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.6910956501961%2C-36.58098106954516%2C174.69463616609576%2C-36.57915242499916&amp;layer=mapnik&amp;marker=-36.580067829626465%2C174.6928659081459"></iframe>
+                                <br>Corner Hibiscus Coast Highway & Kohu St, Orewa, 0931
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-dollar-sign"></i> Best price<br>
+                                    <i class="fas fa-heart"></i> Long duration stay<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-users"></i> Family rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+
+
+                    <section class="f-cat" data-cat="cat-ds1" data-cat2="cat-ga2" data-cat3="cat-pr3" data-cat4="cat-bnin">
+
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel5.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Warkworth Lodge</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$337</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                A great choice for a stay in Warkworth, Warkworth Lodge features an airport shuttle. Guests can take a dip in the outdoor pool, and the hot tub makes for a relaxing end to the day. Other features include a terrace and a garden. The helpful staff and location get great marks from fellow travellers.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.6595072746277%2C-36.39911351856276%2C174.66304779052737%2C-36.397280575544876&amp;layer=mapnik&amp;marker=-36.398198000016095%2C174.66127800000004"></iframe>
+                                <br>8 Falls Street, Warkworth, 0910
+                                <br><br>
+                                <opts>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-users"></i> Family rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+
+
+                    <section class="f-cat" data-cat="cat-ds3" data-cat2="cat-ga4" data-cat3="cat-pr4" data-cat4="cat-bnin">
+
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel6.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Plume Villas</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$887</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                Enjoy your visit to Warkworth with a stay at Plume Villas. Guests can splash around at the seasonal outdoor pool or grab a bite to eat at the coffee shop/cafe. A terrace and a garden are offered, and in-room conveniences at this luxurious lodge include fridges and microwaves. The walkable location and spacious guest rooms get great marks from fellow travellers.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.70256477594378%2C-36.37625801176579%2C174.70610529184344%2C-36.374424529859354&amp;layer=mapnik&amp;marker=-36.37534130001606%2C174.70433460000004"></iframe>
+                                <br>37 Sharp Road, Warkworth, Auckland, 982
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-heart"></i> Long duration stay<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-users"></i> Family rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+                    <section class="f-cat" data-cat="cat-ds2" data-cat2="cat-ga4" data-cat3="cat-pr4" data-cat4="cat-bin">
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel7.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Walton Park Motor Lodge</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$468</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                Enjoy your visit to Warkworth with a stay at Walton Park Motor Lodge. Guests can take a dip in the outdoor pool, and freebies such as WiFi and self-parking are added perks. The comfortable beds and helpful staff get good marks from fellow travellers.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.6591424942017%2C-36.40341180547994%2C174.66010272502902%2C-36.40160055233227&amp;layer=mapnik&amp;marker=-36.40250640001606%2C174.65962149999996"></iframe>
+                                <br>2 Walton Avenue, Warkworth
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-coffee"></i> Breakfast included<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-users"></i> Family rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+                    <section class="f-cat" data-cat="cat-ds1" data-cat2="cat-ga1" data-cat3="cat-pr3" data-cat4="cat-bin">
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel8.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Tracy's Boutique BnB Farmstay</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$307</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                Tracy's Boutique BnB Farmstay is a great choice for a stay in Wellsford. Free perks include WiFi, self-parking and full breakfast daily between 7 AM and 9:00 AM. Other highlights at this Georgian bed & breakfast include a terrace and a garden. Fellow travellers say good things about the location.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.5591524243355%2C-36.31432115876306%2C174.5601126551628%2C-36.31250783118966&amp;layer=mapnik&amp;marker=-36.31341400001603%2C174.55963199999997"></iframe>
+                                <br>84 Spindler Road, Wellsford, Auckland, 972
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-coffee"></i> Breakfast included<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-user"></i> Single rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+                    <section class="f-cat" data-cat="cat-ds3" data-cat2="cat-ga1" data-cat3="cat-pr4" data-cat4="cat-bin">
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel9.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Aotearoa Surf Eco Pods</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$487</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                Adjacent to a golf course, Aotearoa Surf Eco Pods is a great choice for a stay in Te Arai. Guests can indulge in deep-tissue massages, aromatherapy or reflexology. A 24-hour fitness centre and a beach shuttle are offered, and in-room conveniences include fridges and microwaves.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.58421498537066%2C-36.17067424042162%2C174.58517521619797%2C-36.16885757734623&amp;layer=mapnik&amp;marker=-36.16976500001596%2C174.5846947"></iframe>
+                                <br>11 Te Arai Point Rd, Te Arai, Northland, 0975
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-heart"></i> Long duration stay<br>
+                                    <i class="fas fa-coffee"></i> Breakfast included<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-user"></i> Single rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+                    <section class="f-cat" data-cat="cat-ds3" data-cat2="cat-ga1" data-cat3="cat-pr2" data-cat4="cat-bnin">
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel10.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Kawai Purapura Retreat Centre</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$209</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                Kawai Purapura Retreat Centre is a great choice for a stay in Auckland. Guests can indulge in deep-tissue massages, and Vegetarian/Vegan Cafe serves breakfast and lunch. Other highlights include an outdoor pool, a hot tub and a sauna. The pool and helpful staff get good marks from fellow travellers.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.7041526436806%2C-36.720850341773584%2C174.70511287450796%2C-36.71904651557085&amp;layer=mapnik&amp;marker=-36.71994840001627%2C174.70463189999998"></iframe>
+                                <br>14 Mills Lane, Auckland, Auckland, 0632
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-heart"></i> Long duration stay<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-user"></i> Single rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+                    <section class="f-cat" data-cat="cat-ds4" data-cat2="cat-ga4" data-cat3="cat-pr2" data-cat4="cat-bin">
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel11.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Castle Court Motel</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$297</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                When visiting Wellsford, Castle Court Motel is a great choice to consider. Guests will have free perks such as WiFi and self-parking.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.52787518501282%2C-36.305673433370465%2C174.52883541584018%2C-36.303859904673004&amp;layer=mapnik&amp;marker=-36.30476700001603%2C174.52835499999992"></iframe>
+                                <br>1643 State Highway 1, Wellsford, 1011
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-coffee"></i> Breakfast included<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-users"></i> Family rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+                    <section class="f-cat" data-cat="cat-ds1" data-cat2="cat-ga1" data-cat3="cat-pr1" data-cat4="cat-bnin">
+
+                        <!--The image coppied from https://nz.hotels.com/ and used only for development purposes-->
+
+                        <img src="./assets/images/hotel12.jpg" height="330">
+                        <br>
+
+                        <div class="row">
+                            <div class="col col-6 col-s-6">
+                                <p><tl>Mangawhai Retreat Apartments</tl></p>
+                            </div>
+
+                            <div class="col-6 col-s-6">
+                                <p><prc>NZ$175</prc></p>
+                            </div>
+                        </div>
+                        <p>
+                            <dsc>
+                                Mangawhai Retreat Apartments is a great choice for a stay in Mangawhai. You'll have free perks such as WiFi and self-parking. Conveniences such as kitchenettes are in all apartments, along with balconies and flat-screen TVs. Fellow travellers like the comfortable beds and nice bathrooms.<br><br>
+                                <iframe class="map"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=174.56092000007632%2C-36.17151218643252%2C174.56188023090365%2C-36.169695542781284&amp;layer=mapnik&amp;marker=-36.170604000015935%2C174.56139940000003"></iframe>
+                                <br>208 Cames Road, RD5, Mangawhai, 945
+                                <br><br>
+                                <opts>
+                                    <i class="fas fa-dollar-sign"></i> Best price<br>
+                                    <i class="fa fa-wifi"></i> Free WiFI<br>
+                                    <i class="fas fa-snowflake"></i> Air conditioning<br>
+                                    <i class="fas fa-smoking-ban"></i> Non-smoking rooms<br>
+                                    <i class="fa fa-car"></i> Free parking<br>
+                                    <i class="fas fa-user"></i> Single rooms<br>
+                                </opts>
+                            </dsc>
+
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn-sec checkavail">Check Availability</button>
+
+                    </section>
+
+                </hotels>
+            </div>
+
+        </div>
+
+
+    </main>
+    <!--======== Footer ========-->
+    <footer id="bottom">
+        <!--<footer id="bottom">
+     <div>
+         <a href="mailto:emmchik@mail.ru">email our team</a>
+         <a href="tel:022682366">contact us</a>
+     </div>-->
+        <button onclick="topFunction()" id="topbtn" title="Go to top">Top</button>
+    </footer>
+    <!--======== All JS ========-->
+    <script type='text/javascript' src="./assets/scripts/jquery-2.2.3.min.js"></script>
+    <script type='text/javascript' src="./assets/scripts/jquery-ui.1.12.1.min.js"></script>
+    <script type='text/javascript' src="./assets/scripts/bootstrap.min.js"></script>
+    <script type='text/javascript' src="./assets/scripts/book.now.filter.js"></script>
+    <script type='text/javascript' src="./assets/scripts/book.now.form.js"></script>
+    <script type='text/javascript' src="./assets/scripts/AddSection.js"></script>
+    <script type='text/javascript' src="./assets/scripts/app.comments.js"></script>
+    <script src="./assets/scripts/scroll.js"></script>
+    <script src="./assets/scripts/navi.js"></script>
+    <script src="./assets/scripts/top.js"></script>
+
+</body>
+</html>

@@ -1018,3 +1018,54 @@ p {
         line-height: 30px;
         font-size: 14px;
     }
+
+
+#create-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    -webkit-box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(60, 64, 101, 0.1);
+    border-radius: 10px;
+    background-color: #FAFAFA;
+}
+
+    #create-form label {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    #create-form input {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+
+    #create-form button {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #fbf7ee;
+        border: 1px solid black;
+        border-color: #e7e7e7;
+        padding: 10px 20px;
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        width: 20%;
+        margin: 0 auto;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 10px;
+    }
+
+        #create-form button:hover {
+            background-color: #2A55B1;
+            border-color: 1px solid rgb(180, 207, 231);
+            color: #fbf7ee;
+            text-shadow: 2px 2px 4px #000000;
+        }

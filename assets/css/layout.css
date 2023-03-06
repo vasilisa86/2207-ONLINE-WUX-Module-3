@@ -188,8 +188,8 @@ a.box:focus, a.box:hover {
 a.box:active {
     box-shadow: inset 0 1px 2px rgba(10,10,10,.2),0 0 0 1px #485fc7
 }
-/* === Hotels Section ==== */
-hotels {
+/* === Books Section ==== */
+books {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -198,18 +198,18 @@ hotels {
 }
 
 @media only screen and (max-width: 768px) {
-    hotels {
+    books {
         gap: 10px;
     }
 }
 
 @media only screen and (max-width: 300px) {
-    hotels {
+    books {
         gap: 30px;
     }
 }
 
-hotels section {
+books section {
     position: relative;
     -webkit-box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.3);
@@ -221,23 +221,23 @@ hotels section {
     background-color: #FAFAFA;
 }
 
-    hotels section img {
+    books section img {
         width: 100%;
         padding: 0px;
     }
 
-    /* hotels section img:hover {
+    /* books section img:hover {
                 transform: scale(1.03);
             }*/
 
-    hotels section tl {
+    books section tl {
         font-size: large;
         word-spacing: 1px;
         font-weight: bold;
         color: #2A55B1;
     }
 
-    hotels section prc {
+    books section prc {
         color: #EC2623;
         font-size: large;
         text-shadow: 2px 2px 4px #00000151;
@@ -246,11 +246,11 @@ hotels section {
         float: right
     }
 
-    hotels section dsc {
+    books section dsc {
         font-size: medium;
     }
 
-        hotels section dsc opts {
+        books section dsc opts {
             color: #257708;
         }
 
