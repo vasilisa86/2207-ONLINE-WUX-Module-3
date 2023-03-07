@@ -279,7 +279,7 @@ function editBook(bookId) {
 
     // Create the edit form with input fields for each book property
     const editForm = document.createElement("form");
-    editForm.setAttribute("class", "wrapper-edit");
+    editForm.setAttribute("class", "wrapper");
 
     const titleInput = document.createElement("input");
     titleInput.setAttribute("type", "text");
@@ -357,8 +357,9 @@ function editBook(bookId) {
 
     // Append the edit form to the books container
     bookSection.appendChild(editForm);
-    // Show the edit form
-    editForm.classList.add('show');
+    // Add the 'show' class to the edit wrapper
+    const editWrapper = document.getElementById("edit-wrapper");
+    editWrapper.classList.add("show");
 }
 
 
