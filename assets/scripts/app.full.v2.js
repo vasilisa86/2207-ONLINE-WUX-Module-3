@@ -22,9 +22,27 @@ if (!books) {
 } else {
     // If books are found in local storage, parse the JSON string to an object
     books = JSON.parse(books);
-    //// Clear the books container to prevent duplicates
-    //booksContainer.innerHTML = "";
 }
+    ////// Remove duplicates from the books array
+    ////books = books.filter((book, index) => {
+    ////    return (
+    ////        index ===
+    ////        books.findIndex(
+    ////            (b) =>
+    ////                b.title === book.title &&
+    ////                b.author === book.author &&
+    ////                b.genre === book.genre &&
+    ////                b.price === book.price &&
+    ////                b.owner === book.owner
+    ////        )
+    ////    );
+    //});
+
+    // Update local storage with the updated books array
+    localStorage.setItem("books", JSON.stringify(books));
+
+    // Clear the books container to prevent duplicates
+    booksContainer.innerHTML = "";
 
 // Render books on page load
 books.forEach((book) => {
@@ -264,7 +282,6 @@ function renderBook(book) {
 
 
 
-// Function to edit a book
 function editBook(bookId) {
     // Find the book in the books array by its ID
     const bookIndex = books.findIndex(book => book.id === bookId);
@@ -278,46 +295,81 @@ function editBook(bookId) {
     }
 
     // Create the edit form with input fields for each book property
-    const editForm = document.createElement("form");
-    editForm.setAttribute("class", "wrapper-edit");
+    const editWrapper = document.createElement("div");
+    editWrapper.setAttribute("class", "edit-wrapper");
 
+    const editForm = document.createElement("form");
+    editForm.setAttribute("class", "form");
+
+    const titleLabel = document.createElement("label");
+    titleLabel.setAttribute("for", "edit-title");
+    titleLabel.textContent = "Title:";
     const titleInput = document.createElement("input");
     titleInput.setAttribute("type", "text");
+    titleInput.setAttribute("id", "edit-title");
     titleInput.setAttribute("placeholder", "Title");
     titleInput.value = book.title;
 
+    const authorLabel = document.createElement("label");
+    authorLabel.setAttribute("for", "edit-author");
+    authorLabel.textContent = "Author:";
     const authorInput = document.createElement("input");
     authorInput.setAttribute("type", "text");
+    authorInput.setAttribute("id", "edit-author");
     authorInput.setAttribute("placeholder", "Author");
     authorInput.value = book.author;
 
+    const genreLabel = document.createElement("label");
+    genreLabel.setAttribute("for", "edit-genre");
+    genreLabel.textContent = "Genre:";
     const genreInput = document.createElement("input");
     genreInput.setAttribute("type", "text");
+    genreInput.setAttribute("id", "edit-genre");
     genreInput.setAttribute("placeholder", "Genre");
     genreInput.value = book.genre;
 
+    const priceLabel = document.createElement("label");
+    priceLabel.setAttribute("for", "edit-price");
+    priceLabel.textContent = "Price:";
     const priceInput = document.createElement("input");
     priceInput.setAttribute("type", "number");
+    priceInput.setAttribute("id", "edit-price");
     priceInput.setAttribute("placeholder", "Price");
     priceInput.value = book.price;
 
+    const ownerLabel = document.createElement("label");
+    ownerLabel.setAttribute("for", "edit-owner");
+    ownerLabel.textContent = "Owner:";
     const ownerInput = document.createElement("input");
     ownerInput.setAttribute("type", "text");
+    ownerInput.setAttribute("id", "edit-owner");
     ownerInput.setAttribute("placeholder", "Owner");
     ownerInput.value = book.owner;
 
+    const imageLabel = document.createElement("label");
+    imageLabel.setAttribute("for", "edit-image");
+    imageLabel.textContent = "Image:";
     const imageInput = document.createElement("input");
     imageInput.setAttribute("type", "file");
+    imageInput.setAttribute("id", "edit-image");
 
-    const submitBtn = document.createElement("button");
-    submitBtn.setAttribute("type", "submit");
-    submitBtn.textContent = "Save Changes";
+    const saveChangesBtn = document.createElement("button");
+    saveChangesBtn.setAttribute("type", "submit");
+    saveChangesBtn.setAttribute("id", "save-changes-btn");
+    saveChangesBtn.textContent = "Save Changes";
+
+    const closeBtnWrapper = document.createElement("div");
+    closeBtnWrapper.setAttribute("class", "close-ca-form");
+
+    const closeBtn = document.createElement("div");
+    closeBtn.innerHTML = "<i class='bx bx-x'></i>";
+    closeBtn.addEventListener("click", () => editWrapper.remove());
 
     // Add an event listener to the edit form
     editForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        // Update the book object with the new property values
+    // Update the book object with the new property values
         book.title = titleInput.value;
         book.author = authorInput.value;
         book.genre = genreInput.value;
@@ -344,21 +396,37 @@ function editBook(bookId) {
 
         // Remove the edit form
         editForm.remove();
+        editWrapper.remove();
     });
 
-    // Append the input fields and submit button to the edit form
-    editForm.appendChild(titleInput);
-    editForm.appendChild(authorInput);
-    editForm.appendChild(genreInput);
-    editForm.appendChild(priceInput);
-    editForm.appendChild(ownerInput);
-    editForm.appendChild(imageInput);
-    editForm.appendChild(submitBtn);
+    // Append the edit form to the edit wrapper
+    editWrapper.appendChild(editForm);
+    
 
-    // Append the edit form to the books container
-    bookSection.appendChild(editForm);
-    // Show the edit form
-    editForm.classList.add('show');
+    // Append the input fields and submit button to the edit form
+    editForm.appendChild(titleLabel);
+    editForm.appendChild(titleInput);
+    editForm.appendChild(authorLabel);
+    editForm.appendChild(authorInput);
+    editForm.appendChild(genreLabel);
+    editForm.appendChild(genreInput);
+    editForm.appendChild(priceLabel);
+    editForm.appendChild(priceInput);
+    editForm.appendChild(ownerLabel);
+    editForm.appendChild(ownerInput);
+    editForm.appendChild(imageLabel);
+    editForm.appendChild(imageInput);
+    editForm.appendChild(saveChangesBtn);
+    closeBtnWrapper.appendChild(closeBtn);
+    editForm.appendChild(closeBtnWrapper);
+    
+    
+
+    // Append the edit wrapper to the books container
+    bookSection.appendChild(editWrapper);
+    
+    // Show the edit wrapper
+    editWrapper.classList.add('show');
 }
 
 
