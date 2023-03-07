@@ -33,18 +33,22 @@
                     <a href="app.html">NICHE APP</a>
                     <span class="close disp"><i class="bx bx-x"></i></span>
                 </ul>
-
-                <div class="col disp">
-                    <a class="btn login">Login In</a>
-                </div>
-
+                               
                 <!--====== Responsive menu  =========-->
                 <div class="responsemenu disp">
                     <i class="bx bx-menu"></i>
 
                 </div>
-            </div>
-        </nav>
+
+                <div class="cart-icon disp">
+                    <div class="bx bx-shopping-bag my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></div>
+                    
+                </div>
+                <div class="col disp">
+                    Login as:&nbsp;<i class="fa-solid fa-user"> TEST USER</i>
+                </div>
+                </div>
+</nav>
 
         <!--======== Book Now Title ========-->
         <div class="background-pages title"> <a href="index.html">HOME</a> / NICHE APP</div>
@@ -209,42 +213,50 @@
                 </form>
 
             </div>
+            
+            <div class="row no-margin">
+                <div class="col-8">
 
-            <h2>My Bookstore</h2>
+                    <form id="create-form">
+                        <div class="col col-6 col-s-10">
+                            <label for="create-title">Title:</label>
+                            <input type="text" id="create-title" required>
 
-            <form id="create-form">
-                <label for="create-title">Title:</label>
-                <input type="text" id="create-title" required>
+                            <label for="create-author">Author:</label>
+                            <input type="text" id="create-author" required>
 
-                <label for="create-author">Author:</label>
-                <input type="text" id="create-author" required>
+                            <label for="create-genre">Genre:</label>
+                            <input type="text" id="create-genre" required>
+                        </div>
+                        <div class="col col-6 col-s-10">
+                            <label for="create-price">Price:</label>
+                            <input type="number" id="create-price" min="0" step="0.01" required>
 
-                <label for="create-genre">Genre:</label>
-                <input type="text" id="create-genre" required>
+                            <label for="create-owner">Owner:</label>
+                            <input type="text" id="create-owner" required>
 
-                <label for="create-price">Price:</label>
-                <input type="number" id="create-price" min="0" step="0.01" required>
+                            <label for="create-image">Image:</label>
+                            <input type="file" id="create-image" accept="image/*" required>
+                            <label for="preview-section">Image Preview:</label>
+                            <div id="preview-section"></div>
+                        </div>
 
-                <label for="create-owner">Owner:</label>
-                <input type="text" id="create-owner" required>
+                        <button type="submit">Create Book</button>
+                    </form>
+                </div>
 
-                <label for="create-image">Image:</label>
-                <input type="file" id="create-image" accept="image/*" required>
-
-                <button type="submit">Create Book</button>
-            </form>
-            <div id="preview-section"></div>
-
-
-
+            </div>
+            
+            <ul id="cart"></ul>
             <!--======== Instant Search Filter Results ========-->
             <div>
-
+                <h2>My Bookstore:</h2>
+                <books id="books-container">
+                 </books>
+                <h2>All Bookstore:</h2>
                 <books id="books-container">
 
-
                     <section>
-                        <!--The image copied from https://www.paperplus.co.nz/ and used only for development purposes-->
                         <img src="./assets/images/book1.jpg" height="330">
                         <br>
                         <div class="row">
@@ -277,7 +289,7 @@
                         </dsc>
 
                         <br>
-                        <button class="btn my-cart-btn">Add to Cart</button>
+                        <button class="btn my-cart-btn" data-id="42" data-name="The Great Gatsby" data-price="15.99" data-quantity="1" data-image="./assets/images/book1.jpg">Add to Cart</button>
                         <button class="btn">Book Details</button>
                     </section>
 
@@ -316,7 +328,7 @@
                         </dsc>
 
                         <br>
-                        <button class="btn my-cart-btn">Add to Cart</button>
+                        <button class="btn my-cart-btn" data-id="43" data-name="NewBookAuthor" data-price="9.99" data-quantity="1" data-image="./assets/images/book.jpg">Add to Cart</button>
                         <button class="btn">Book Details</button>
                     </section>
 
@@ -340,6 +352,8 @@
     <!--<script type='text/javascript' src="./assets/scripts/book.now.filter.js"></script>
     <script type='text/javascript' src="./assets/scripts/book.now.form.js"></script>-->
     <script type='text/javascript' src="./assets/scripts/app.full.v2.js"></script>
+    <script type='text/javascript' src="./assets/scripts/app.cart.js"></script>
+    <script type='text/javascript' src="./assets/scripts/app.cart.min.js"></script>
     <script src="./assets/scripts/scroll.js"></script>
     <script src="./assets/scripts/navi.js"></script>
     <script src="./assets/scripts/top.js"></script>
