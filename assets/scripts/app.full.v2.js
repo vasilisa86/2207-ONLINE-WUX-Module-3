@@ -22,32 +22,25 @@ if (!books) {
 } else {
     // If books are found in local storage, parse the JSON string to an object
     books = JSON.parse(books);
+    // Remove duplicates from the books array
+    books = books.filter((book, index) => {
+        return (
+            index ===
+            books.findIndex((b) => b.title === book.title)
+        );
+    });
 }
-    ////// Remove duplicates from the books array
-    ////books = books.filter((book, index) => {
-    ////    return (
-    ////        index ===
-    ////        books.findIndex(
-    ////            (b) =>
-    ////                b.title === book.title &&
-    ////                b.author === book.author &&
-    ////                b.genre === book.genre &&
-    ////                b.price === book.price &&
-    ////                b.owner === book.owner
-    ////        )
-    ////    );
-    //});
 
-    // Update local storage with the updated books array
-    localStorage.setItem("books", JSON.stringify(books));
 
-    // Clear the books container to prevent duplicates
-    booksContainer.innerHTML = "";
+// Update local storage with the updated books array
+localStorage.setItem("books", JSON.stringify(books));
 
 // Render books on page load
-books.forEach((book) => {
-    createBook(book.title, book.author, book.genre, book.price, book.owner);
-});
+if (books.length > 0) {
+    books.forEach((book) => {
+        createBook(book.title, book.author, book.genre, book.price, book.owner, book.image, book.id);
+    });
+}
 
 // Add event listener to create book form
 createForm.addEventListener("submit", function (event) {
@@ -64,7 +57,7 @@ createForm.addEventListener("submit", function (event) {
 });
 // Add event listener to create image input
 createImageInput.addEventListener("change", function (event) {
-    const previewSection = document.getElementById("preview-section");
+    
     const previewImage = document.createElement("img");
     previewImage.setAttribute("height", "200");
     previewImage.setAttribute("src", URL.createObjectURL(event.target.files[0]));
@@ -72,39 +65,47 @@ createImageInput.addEventListener("change", function (event) {
 });
 
 // Function to create a new book
-function createBook(title, author, genre, price, owner, image) {
-
+function createBook(title, author, genre, price, owner, image, id) {
+    // If ID is not provided, generate a new ID
+    if (!id) {
+        id = generateId();
+    }
+    
     // Create a new book object
     const newBook = {
-        id: generateId(),
+        id: id,
         title: title,
         author: author,
         genre: genre,
         price: price,
         owner: owner,
         rating: 1, // Set initial rating to 1
-        image: image ? URL.createObjectURL(image) : null // Set image URL if image is uploaded, otherwise set to null
+        image: null // Set image URL if image is uploaded, otherwise set to null
     };
 
     console.log('New book created with ID:', newBook.id);
+    console.log("New books store:", books);
 
     // Store the image URL in local storage
     if (image) {
-        const reader = new FileReader();
-        reader.readAsDataURL(image);
-        reader.onload = function () {
-            const imageURL = reader.result;
+        if (image instanceof File) {
+            const imageURL = URL.createObjectURL(image);
             newBook.image = imageURL; // Set the image URL in the newBook object
             localStorage.setItem(`book-image-${newBook.id}`, imageURL); // Set the key for the image URL in local storage
             console.log(localStorage); // Log the localStorage object to the console
-        };
+        } else {
+            console.error('Invalid argument passed to createObjectURL():', image);
+        }
     }
     
     // Add the new book to the books array
     books.push(newBook);
 
     // Update local storage with the new book object
-  localStorage.setItem("books", JSON.stringify(books));
+    localStorage.setItem("books", JSON.stringify(books));
+
+    // Update the books array from local storage
+    books = JSON.parse(localStorage.getItem("books"));
 
     // Reset image preview
     previewSection.innerHTML = "";
@@ -242,6 +243,7 @@ function createBook(title, author, genre, price, owner, image) {
 
 }
 
+
 function renderBook(book) {
     // Find the book in the books array by its ID
     const bookIndex = books.findIndex(b => b.id === book.id);
@@ -279,7 +281,6 @@ function renderBook(book) {
     const ownerElem = bookSection.querySelector("#book-owner");
     ownerElem.textContent = book.owner;
 }
-
 
 
 function editBook(bookId) {
@@ -430,16 +431,20 @@ function editBook(bookId) {
 }
 
 
-// Function to remove a book
 function removeBook(bookId) {
     // Find the book in the books array by its ID
     const bookIndex = books.findIndex(book => book.id === bookId);
 
+    console.log("Book to remove:", books[bookIndex]);
+
     // Remove the book from the books array and local storage
-    books.splice(bookIndex, 1);
+    books.splice(bookIndex, 10);
     localStorage.setItem("books", JSON.stringify(books));
+    console.log("Books removed from local storage by Button:", books);
 
     // Remove the book section from the page
     const bookSection = document.querySelector(`[data-book-id="${bookId}"]`);
     bookSection.remove();
+
+    console.log("Remaining books:", books);
 }
