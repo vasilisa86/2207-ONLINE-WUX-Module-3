@@ -8,6 +8,7 @@ const ownerInput = document.getElementById("create-owner");
 const previewSection = document.getElementById("preview-section");
 const booksContainer = document.getElementById("books-container");
 const createImageInput = document.getElementById("create-image");
+const commentsForm = document.querySelector("#comments-form");
 
 // Function to generate a unique ID for a new book
 function generateId() {
@@ -526,20 +527,71 @@ function showBookDetails(id) {
     commentsInput.setAttribute("id", "book-comments");
     commentsInput.setAttribute("name", "book-comments");
 
-    
+    const commentsList = document.createElement("ul");
+    commentsList.setAttribute("id", "comments-list");
+
+    const commentsForm = document.createElement("form");
+    commentsForm.setAttribute("id", "comments-form");
+
+    const commentsNameInput = document.createElement("input");
+    commentsNameInput.setAttribute("type", "text");
+    commentsNameInput.setAttribute("id", "comments-name");
+    commentsNameInput.setAttribute("placeholder", "Name");
+
+    const commentsTextInput = document.createElement("textarea");
+    commentsTextInput.setAttribute("id", "comments-text");
+    commentsTextInput.setAttribute("placeholder", "Leave a comment");
+
+    const commentsSubmit = document.createElement("button");
+    commentsSubmit.setAttribute("class", "btn cts-btn");
+    commentsSubmit.setAttribute("type", "submit");
+    commentsSubmit.textContent = "Submit";
+
+    commentsForm.appendChild(commentsNameInput);
+    commentsForm.appendChild(commentsTextInput);
+    commentsForm.appendChild(commentsSubmit);
+
+    commentsDiv.appendChild(commentsLabel);
+    commentsDiv.appendChild(commentsList);
+    commentsDiv.appendChild(commentsForm);
+
+    // Add event listener to the comments form
+    commentsForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const commentsNameInput = event.target.elements["comments-name"];
+        const commentsTextInput = event.target.elements["comments-text"];
+
+        const name = commentsNameInput.value.trim();
+        const text = commentsTextInput.value.trim();
+
+        if (!name || !text) {
+            alert("Please enter your name and comment.");
+            return;
+        }
+
+        const comment = {
+            name,
+            text,
+            timestamp: new Date().toISOString(),
+            replies: [],
+        };
+
+        addComment(comment);
+
+        commentsNameInput.value = "";
+        commentsTextInput.value = "";
+    });
+
     descriptionDiv.appendChild(bookImage);
     descriptionDiv.appendChild(document.createElement("br"));
     titlePriceP.appendChild(titleDiv);
     titlePriceP.appendChild(priceDiv);
     descriptionDiv.appendChild(titlePriceP);
     detailsWrapper.appendChild(detailsSection);
-    commentsDiv.appendChild(commentsLabel);
-    commentsDiv.appendChild(commentsInput);
     detailsSectionRow.appendChild(descriptionDiv);
     detailsSectionRow.appendChild(commentsDiv);
     
     
-
     // Create the description element with the required attributes
     const authorElem = document.createElement("span");
     authorElem.setAttribute("id", "book-author");
@@ -601,4 +653,203 @@ function showBookDetails(id) {
     previewSection.appendChild(detailsWrapper);
 
     detailsWrapper.classList.add('book-details-show');
+
+   
+   
 }
+
+function formatDate(timestamp) {
+    const date = new Date(timestamp);
+    const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ];
+    const year = date.getFullYear();
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const hours = date.getHours();
+    const minutes = "0" + date.getMinutes();
+    const seconds = "0" + date.getSeconds();
+    return `${day} ${month} ${year} ${hours}:${minutes.substr(-2)}:${seconds.substr(
+        -2
+    )}`;
+}
+
+
+function addComment(comment) {
+
+    const commentsList = document.querySelector("#comments-list");
+
+    const commentWrapper = document.createElement("div");
+    commentWrapper.setAttribute("class", "comment-wrapper");
+
+    const commentText = document.createElement("p");
+    commentText.textContent = comment.text;
+
+    const commentInput = document.createElement("textarea");
+    commentInput.setAttribute("id", "comment-input");
+    commentInput.setAttribute("name", "comment-input");
+
+    const commentTimestamp = document.createElement("span");
+    commentTimestamp.setAttribute("class", "comment-timestamp");
+    commentTimestamp.textContent = formatDate(comment.timestamp);
+
+    const replyLink = document.createElement("a");
+    replyLink.setAttribute("href", "#");
+    replyLink.textContent = "Reply";
+    replyLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        showReplyForm(commentWrapper);
+    });
+
+    const replyList = document.createElement("div");
+    replyList.setAttribute("class", "reply-list");
+
+    const commentReplies = comment.replies || [];
+
+    commentReplies.forEach((reply) => {
+        addReply(reply, replyList);
+    });
+
+    const replyFormWrapper = document.createElement("div");
+    replyFormWrapper.setAttribute("class", "reply-form-wrapper");
+
+    const replyForm = document.createElement("form");
+
+    const commentsNameInput = document.createElement("input");
+    commentsNameInput.setAttribute("type", "text");
+    commentsNameInput.setAttribute("id", "comments-name");
+    commentsNameInput.setAttribute("placeholder", "Name");
+
+    const replyInput = document.createElement("textarea");
+    replyInput.setAttribute("name", "reply-input");
+    replyInput.setAttribute("placeholder", "Add a reply");
+
+    const replyButton = document.createElement("button");
+    replyButton.setAttribute("type", "submit");
+    replyButton.textContent = "Reply";
+
+    replyForm.appendChild(commentsNameInput);
+    replyForm.appendChild(replyInput);
+    replyForm.appendChild(replyButton);
+    replyFormWrapper.appendChild(replyForm);
+
+    commentWrapper.appendChild(commentText);
+    commentWrapper.appendChild(commentTimestamp);
+    commentWrapper.appendChild(replyLink);
+    commentWrapper.appendChild(replyList);
+    commentWrapper.appendChild(replyFormWrapper);
+
+    commentsList.appendChild(commentWrapper);
+
+    /// Function to add a reply to the reply list
+    function addReply(reply, replyList) {
+        // Create a new list item element with the reply text
+        const replyItem = document.createElement("p");
+        replyItem.textContent = reply.text;
+
+        // Append the new list item to the reply list
+        replyList.appendChild(replyItem);
+    }
+    // Add event listener to the reply form
+    replyForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const replyInput = event.target.elements["comments-text"];
+        const replyText = replyInput.value.trim();
+
+        const nameInput = event.target.elements["comments-name"];
+        const nameText = nameInput.value.trim();
+
+        if (!nameText) {
+            alert("Please enter your name.");
+            return;
+        }
+
+        if (!replyText) {
+            alert("Please enter a comment.");
+            return;
+        }
+
+        const reply = {
+            text: replyText,
+            timestamp: new Date().toISOString(),
+            name: nameText,
+        };
+
+        addReply(reply, replyList);
+
+        replyInput.value = "";
+        nameInput.value = "";
+    });
+
+}
+
+
+function showReplyForm(commentWrapper) {
+    const replyFormWrapper = document.createElement("div");
+    replyFormWrapper.setAttribute("class", "reply-form-wrapper");
+
+    const replyForm = document.createElement("form");
+
+    const replyInput = document.createElement("textarea");
+    replyInput.setAttribute("name", "reply-input");
+    replyInput.setAttribute("placeholder", "Add a reply");
+
+    const replyButton = document.createElement("button");
+    replyButton.setAttribute("type", "submit");
+    replyButton.textContent = "Reply";
+
+    replyForm.appendChild(replyInput);
+    replyForm.appendChild(replyButton);
+    replyFormWrapper.appendChild(replyForm);
+
+    const replyList = commentWrapper.querySelector(".reply-list");
+    replyList.appendChild(replyFormWrapper);
+
+
+    // Add event listener to the reply form
+    replyForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const replyInput = event.target.elements["reply-input"];
+        const replyText = replyInput.value.trim();
+
+        if (!replyText) {
+            alert("Please enter a reply.");
+            return;
+        }
+
+        const reply = {
+            text: replyText,
+            timestamp: new Date().toISOString(),
+        };
+
+        addReply(reply, replyList);
+
+        replyInput.value = "";
+    });
+
+
+}
+
+
+   
+
+
+
+
+
+
+
+
