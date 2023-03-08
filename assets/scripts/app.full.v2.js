@@ -212,6 +212,11 @@ function createBook(title, author, genre, price, owner, image, id) {
     detailsBtn.textContent = "Book Details";
     newSection.appendChild(detailsBtn);
 
+    // Add event listener to the "Book Details" button
+    detailsBtn.addEventListener("click", () => {
+        showBookDetails(newBook.id);
+    });
+
     const editContainer = document.createElement("div");
     editContainer.setAttribute("class", "btn-container");
 
@@ -447,4 +452,153 @@ function removeBook(bookId) {
     bookSection.remove();
 
     console.log("Remaining books:", books);
+}
+
+
+// Function to show book details
+function showBookDetails(id) {
+    // Find the book in the books array with the provided id
+    const book = books.find((book) => book.id === id);
+
+    // Create a new div element with the required attributes
+    const detailsWrapper = document.createElement("div");
+    detailsWrapper.setAttribute("class", "book-details-wrapper");
+
+    // Create a new section element with the required attributes
+    const detailsSection = document.createElement("section");
+    detailsSection.setAttribute("class", "book-details");
+    detailsSection.setAttribute("data-book-id", book.id);
+
+    const detailsSectionRow = document.createElement("div");
+    detailsSectionRow.setAttribute("class", "row")
+    detailsSection.appendChild(detailsSectionRow);
+
+    // Create the image element with the required attributes
+    const bookImage = document.createElement("img");
+    bookImage.setAttribute("height", "230");
+    bookImage.setAttribute("src", book.image || "./assets/images/book.jpg"); // Set the src attribute to the image URL or default image
+    bookImage.addEventListener("error", () => {
+        bookImage.setAttribute("src", "./assets/images/book.jpg");
+    });
+    
+    // Create the title and price elements with the required attributes
+    const titleElem = document.createElement("span");
+    titleElem.setAttribute("id", "book-title");
+    titleElem.textContent = book.title;
+
+    const titleLabel = document.createElement("label");
+    titleLabel.setAttribute("for", "book-title");
+    titleLabel.textContent = "Book Details: ";
+
+    const priceElem = document.createElement("span");
+    priceElem.setAttribute("id", "book-price");
+    priceElem.textContent = book.price;
+
+    const titlePriceP = document.createElement("p");
+    
+
+    const titleDiv = document.createElement("p");
+    const titleP = document.createElement("p");
+    const titleTl = document.createElement("tl");
+    titleTl.appendChild(titleLabel);
+    titleTl.appendChild(titleElem);
+    titleP.appendChild(titleTl);
+    titleDiv.appendChild(titleP);
+
+    const priceDiv = document.createElement("p");
+    const priceP = document.createElement("p");
+    const pricePrc = document.createElement("prc");
+    pricePrc.appendChild(priceElem);
+    priceP.appendChild(pricePrc);
+    priceDiv.appendChild(priceP);
+
+    const descriptionDiv = document.createElement("div");
+    descriptionDiv.setAttribute("class", "col col-6");
+
+    const commentsDiv = document.createElement("div");
+    commentsDiv.setAttribute("class", "col col-6");
+
+    const commentsLabel = document.createElement("label");
+    commentsLabel.setAttribute("for", "book-comments");
+    commentsLabel.textContent = "Comments: ";
+
+    const commentsInput = document.createElement("textarea");
+    commentsInput.setAttribute("id", "book-comments");
+    commentsInput.setAttribute("name", "book-comments");
+
+    
+    descriptionDiv.appendChild(bookImage);
+    descriptionDiv.appendChild(document.createElement("br"));
+    titlePriceP.appendChild(titleDiv);
+    titlePriceP.appendChild(priceDiv);
+    descriptionDiv.appendChild(titlePriceP);
+    detailsWrapper.appendChild(detailsSection);
+    commentsDiv.appendChild(commentsLabel);
+    commentsDiv.appendChild(commentsInput);
+    detailsSectionRow.appendChild(descriptionDiv);
+    detailsSectionRow.appendChild(commentsDiv);
+    
+    
+
+    // Create the description element with the required attributes
+    const authorElem = document.createElement("span");
+    authorElem.setAttribute("id", "book-author");
+    authorElem.textContent = book.author;
+
+    const genreElem = document.createElement("span");
+    genreElem.setAttribute("id", "book-genre");
+    genreElem.textContent = book.genre;
+
+    const ownerElem = document.createElement("span");
+    ownerElem.setAttribute("id", "book-owner");
+    ownerElem.textContent = book.owner;
+
+    const ratingElem = document.createElement("p");
+    ratingElem.textContent = "Rating: ";
+
+    const optsElem = document.createElement("opts");
+    for (let i = 0; i < 5; i++) {
+        const starElem = document.createElement("i");
+        starElem.setAttribute("class", `fa fa-star${i < book.rating ? " checked" : ""}`);
+        optsElem.appendChild(starElem);
+    }
+    ratingElem.appendChild(optsElem);
+    ratingElem.appendChild(document.createElement("br"));
+    ratingElem.appendChild(document.createElement("br"));
+
+    const descriptionP = document.createElement("p");
+    const descriptionDsc = document.createElement("dsc");
+    const authorP = document.createElement("p");
+    authorP.textContent = "Author: ";
+    authorP.appendChild(authorElem);
+    const genreP = document.createElement("p");
+    genreP.textContent = "Genre: ";
+    genreP.appendChild(genreElem);
+    const ownerP = document.createElement("p");
+    ownerP.textContent = "Owner: ";
+    ownerP.appendChild(ownerElem);
+
+    descriptionDsc.appendChild(authorP);
+    descriptionDsc.appendChild(genreP);
+    descriptionDsc.appendChild(ownerP);
+    descriptionDsc.appendChild(ratingElem);
+    descriptionP.appendChild(descriptionDsc);
+    descriptionDiv.appendChild(descriptionP);
+    
+
+    // Create the close button
+    const closeButton = document.createElement("button");
+    closeButton.setAttribute("class", "btn close-btn");
+    closeButton.textContent = "Close";
+    detailsSection.appendChild(closeButton);
+
+    // Add event listener to the close button
+    closeButton.addEventListener("click", () => {
+        detailsWrapper.remove();
+    });
+
+    // Append the new section to the preview section
+    previewSection.appendChild(detailsWrapper);
+
+    detailsWrapper.classList.add('book-details-show');
 }

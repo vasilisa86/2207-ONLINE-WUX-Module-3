@@ -1718,8 +1718,8 @@ a.text-danger:focus {
     font-size: 4rem;
     cursor: pointer;
 }
-/*
-.container .wrapper {
+/* === Book Details Wrapper ==== */
+.book-details-wrapper {
     position: fixed;
     top: 0;
     right: 0;
@@ -1736,110 +1736,26 @@ a.text-danger:focus {
     visibility: hidden;
     overflow: scroll;
 }
+.book-details-show {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
 
-    .container .wrapper.active-ca {
-        transform: scale(1);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .container .wrapper form {
-        background-color: white;
-        border: 1px solid lightgrey;
-        max-width: 50rem;
-        width: 100%;
-        padding: 2rem;
-        box-shadow: lightgrey;
-        border-radius: 0.5rem;
-        margin: 2rem;
-        margin-top: 45rem;
-    }
+.book-details-wrapper section {
+    background-color: white;
+    border: 1px solid lightgrey;
+    max-width: 50rem;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: lightgrey;
+    border-radius: 0.5rem;
+    margin: 2rem;
+    margin-top: 4rem;
+}
 
 @media only screen and (max-width: 400px) {
-    .container .wrapper form {
-        margin-top: 55rem;
+    .book-details-wrapper section {
+        margin-top: 5rem;
     }
 }
-
-.container .wrapper form h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    padding-top: 2rem;
-}
-
-.container .wrapper form .control {
-    margin-bottom: 2rem;
-}
-
-.container .wrapper form label {
-    display: block;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.container .wrapper form input {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.8rem;
-    display: block;
-    border: 1px solid lightgrey;
-    padding: 1.3rem 0;
-    text-indent: 1rem;
-    border-radius: 0.5rem;
-    width: 100%;
-}
-.container .wrapper form select {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.8rem;
-    display: block;
-    border: 1px solid lightgrey;
-    padding: 1.3rem 0;
-    text-indent: 1rem;
-    border-radius: 0.5rem;
-    width: 100%;
-}
-
-.container .wrapper form .checkbox {
-    margin-bottom: 2rem;
-}
-
-    .container .wrapper form .checkbox input {
-        width: auto;
-        margin-right: 0.5rem;
-        cursor: pointer;
-    }
-
-.container .wrapper form button {
-    display: block;
-    width: 100%;
-    padding: 1.3rem 0;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-.container .wrapper form .links {
-    margin-top: 2rem;
-}
-
-    .container .wrapper form .links span {
-        display: block;
-        margin-bottom: 1rem;
-        font-size: 1.8rem;
-    }
-
-        .container .wrapper form .links span a {
-            color: #c60004;
-        }
-
-            .container .wrapper form .links span a:hover {
-                text-decoration: underline;
-            }
-
-.container .wrapper .close-ca-form {
-    position: absolute;
-    top: 3rem;
-    right: 4rem;
-    color: black;
-    font-size: 4rem;
-    cursor: pointer;
-}*/
