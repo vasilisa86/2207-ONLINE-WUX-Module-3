@@ -213,11 +213,27 @@
                 </form>
 
             </div>
+            <profile>
+                <section>
 
-            <div class="row no-margin">
-                <div class="col-8">
-
+                    <h2>My Profile:</h2>
+                      <div class="col col-12 col-s-12">
+                        <div class="user-profile">
+                            <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Profile picture" class="profile-picture">
+                            <h3 class="username">TEST USER</h3>
+                            <div class="user-details">
+                                <p><strong>Age:</strong> 29</p>
+                                <p><strong>Gender:</strong> Female</p>
+                                <p><strong>Location:</strong> New York City, NY</p>
+                                <p><strong>Occupation:</strong> Software Developer</p>
+                                <p><strong>Interests:</strong> Hiking, photography, reading, cooking</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
                     <form id="create-form">
+                        <h2>Add new book:</h2>
                         <div class="col col-6 col-s-10">
                             <label for="create-title">Title:</label>
                             <input type="text" id="create-title" required>
@@ -243,9 +259,9 @@
 
                         <button type="submit">Create Book</button>
                     </form>
-                </div>
+                </section>
 
-            </div>
+            </profile>
             <!--======== Edit Book Form ========-->
             <!--<div id="edit-wrapper">
         <form id="edit-form">
@@ -259,44 +275,45 @@
         </form>
     </div>-->
             <!--<div class="edit-wrapper">
-                <form action="" class="form">
-                    <h2>Edit Book Form</h2>
-                   
-                    <div class="control">
-                        <label for="">Title:</label>
-                        <input type="text" id="edit-title" placeholder="Title">
-                    </div>
-                    <div class="control">
-                        <label for="">Author:</label>
-                        <input type="text" id="edit-author" placeholder="Author">
-                    </div>
-                    <div class="control">
-                        <label for="">Genre:</label>
-                        <input type="text" id="edit-genre" placeholder="Genre">
-                    </div>
+        <form action="" class="form">
+            <h2>Edit Book Form</h2>
 
-                    <div class="control">
-                        <label for="">Price:</label>
-                        <input type="number" id="edit-price" placeholder="Price">
-                    </div>
-                    <div class="control">
-                        <label for="">Owner:</label>
-                        <input type="text" id="edit-owner" placeholder="Owner">
-                    </div>
-                    <div class="control">
-                        <label for="">Image:</label>
-                        <input type="file" id="edit-image">
-                    </div>
-                    <button type="submit" id="save-changes-btn">Save Changes</button>
-                </form>
+            <div class="control">
+                <label for="">Title:</label>
+                <input type="text" id="edit-title" placeholder="Title">
+            </div>
+            <div class="control">
+                <label for="">Author:</label>
+                <input type="text" id="edit-author" placeholder="Author">
+            </div>
+            <div class="control">
+                <label for="">Genre:</label>
+                <input type="text" id="edit-genre" placeholder="Genre">
+            </div>
 
-                <div class="close-ca-form">
-                    <i class="bx bx-x"></i>
-                </div>
-            </div>-->
+            <div class="control">
+                <label for="">Price:</label>
+                <input type="number" id="edit-price" placeholder="Price">
+            </div>
+            <div class="control">
+                <label for="">Owner:</label>
+                <input type="text" id="edit-owner" placeholder="Owner">
+            </div>
+            <div class="control">
+                <label for="">Image:</label>
+                <input type="file" id="edit-image">
+            </div>
+            <button type="submit" id="save-changes-btn">Save Changes</button>
+        </form>
+
+        <div class="close-ca-form">
+            <i class="bx bx-x"></i>
+        </div>
+    </div>-->
             <!--======== Instant Search Filter Results ========-->
             <div>
                 <h2>My Bookstore:</h2>
+                <br>
                 <books id="books-container">
                 </books>
                 <h2>All Bookstore:</h2>
