@@ -10,6 +10,8 @@ const booksContainer = document.getElementById("books-container");
 const createImageInput = document.getElementById("create-image");
 const commentsForm = document.querySelector("#comments-form");
 
+
+
 // Function to generate a unique ID for a new book
 function generateId() {
     return Math.random().toString(36).substring(2) + Date.now().toString(36);
@@ -94,8 +96,6 @@ function createBook(title, author, genre, price, owner, image, id) {
             newBook.image = imageURL; // Set the image URL in the newBook object
             localStorage.setItem(`book-image-${newBook.id}`, imageURL); // Set the key for the image URL in local storage
             console.log(localStorage); // Log the localStorage object to the console
-        } else {
-            console.error('Invalid argument passed to createObjectURL():', image);
         }
     }
     
@@ -114,7 +114,8 @@ function createBook(title, author, genre, price, owner, image, id) {
     // Create a new section element with the required attributes
     const newSection = document.createElement("section");
     newSection.setAttribute("data-book-id", newBook.id);
-    
+    newSection.classList.add("f-cat", "active");
+        
     // Create the image element with the required attributes
     const bookImage = document.createElement("img");
     bookImage.setAttribute("height", "330");
@@ -204,7 +205,8 @@ function createBook(title, author, genre, price, owner, image, id) {
     
 
     const cartBtn = document.createElement("button");
-    cartBtn.setAttribute("class", "btn my-cart-btn");
+    cartBtn.setAttribute("class", "btn-unv");
+    cartBtn.setAttribute("title", "You can't buy your own products");
     cartBtn.textContent = "Add to Cart";
     newSection.appendChild(cartBtn);
 
@@ -252,14 +254,17 @@ function createBook(title, author, genre, price, owner, image, id) {
 
 function renderBook(book) {
     // Find the book in the books array by its ID
-    const bookIndex = books.findIndex(b => b.id === book.id);
-    if (bookIndex === -1) {
-        console.error(`Book not found for ID ${book.id}`);
-        return;
+    let bookIndex;
+    if (book.id) {
+        bookIndex = books.findIndex(b => b.id === book.id);
+        if (bookIndex === -1) {
+            console.error(`Book not found for ID ${book.id}`);
+            return;
+        }
     }
-    const bookSection = document.querySelector(`[data-book-id="${book.id}"]`);
+    const bookSection = document.querySelector(`[data-book-id="${book.id}"], [data-static-book-id="${book.staticBookId}"]`);
     if (!bookSection) {
-        console.error(`Book section not found for book ID ${book.id}`);
+        console.error(`Book section not found for book ID ${ book.id || book.staticBookId }`);
         return;
     }
 
@@ -430,7 +435,7 @@ function editBook(bookId) {
     
 
     // Append the edit wrapper to the books container
-    bookSection.appendChild(editWrapper);
+    booksContainer.appendChild(editWrapper);
     
     // Show the edit wrapper
     editWrapper.classList.add('show');
@@ -458,6 +463,7 @@ function removeBook(bookId) {
 
 // Function to show book details
 function showBookDetails(id) {
+    console.log(books);
     // Find the book in the books array with the provided id
     const book = books.find((book) => book.id === id);
 
@@ -657,6 +663,8 @@ function showBookDetails(id) {
    
    
 }
+
+
 
 function formatDate(timestamp) {
     const date = new Date(timestamp);

@@ -33,7 +33,7 @@
                     <a href="app.html">NICHE APP</a>
                     <span class="close disp"><i class="bx bx-x"></i></span>
                 </ul>
-                               
+
                 <!--====== Responsive menu  =========-->
                 <div class="responsemenu disp">
                     <i class="bx bx-menu"></i>
@@ -42,13 +42,13 @@
 
                 <div class="cart-icon disp">
                     <div class="bx bx-shopping-bag my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></div>
-                    
+
                 </div>
                 <div class="col disp">
                     Login as:&nbsp;<i class="fa-solid fa-user"> TEST USER</i>
                 </div>
-                </div>
-</nav>
+            </div>
+        </nav>
 
         <!--======== Book Now Title ========-->
         <div class="background-pages title"> <a href="index.html">HOME</a> / NICHE APP</div>
@@ -86,7 +86,7 @@
 
     <main class="container">
         <!--======== Check Availability Form ========-->
-        <div class="wrapper">
+        <!--<div class="wrapper">
             <form action="" class="form">
                 <h2>Check Availability</h2>
                 <div class="control">
@@ -143,262 +143,239 @@
             <div class="close-ca-form">
                 <i class="bx bx-x"></i>
             </div>
-        </div>
+        </div>-->
+        <!--======== Edit Book Form ========-->
+        <!--<div id="edit-wrapper">
+            <form id="edit-form">
+                <input type="text" id="edit-title" placeholder="Title">
+                <input type="text" id="edit-author" placeholder="Author">
+                <input type="text" id="edit-genre" placeholder="Genre">
+                <input type="number" id="edit-price" placeholder="Price">
+                <input type="text" id="edit-owner" placeholder="Owner">
+                <input type="file" id="edit-image">
+                <button type="submit" id="save-changes-btn">Save Changes</button>
+            </form>
+        </div>-->
+        <!--<div class="edit-wrapper">
+            <form action="" class="form">
+                <h2>Edit Book Form</h2>
+
+                <div class="control">
+                    <label for="">Title:</label>
+                    <input type="text" id="edit-title" placeholder="Title">
+                </div>
+                <div class="control">
+                    <label for="">Author:</label>
+                    <input type="text" id="edit-author" placeholder="Author">
+                </div>
+                <div class="control">
+                    <label for="">Genre:</label>
+                    <input type="text" id="edit-genre" placeholder="Genre">
+                </div>
+
+                <div class="control">
+                    <label for="">Price:</label>
+                    <input type="number" id="edit-price" placeholder="Price">
+                </div>
+                <div class="control">
+                    <label for="">Owner:</label>
+                    <input type="text" id="edit-owner" placeholder="Owner">
+                </div>
+                <div class="control">
+                    <label for="">Image:</label>
+                    <input type="file" id="edit-image">
+                </div>
+                <button type="submit" id="save-changes-btn">Save Changes</button>
+            </form>
+
+            <div class="close-ca-form">
+                <i class="bx bx-x"></i>
+            </div>
+        </div>-->
+
+        <profile>
+            <section>
+
+                <h2>My Profile:</h2>
+                <div class="col col-12 col-s-12">
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Profile picture" class="profile-picture">
+                        <h3 class="username">TEST USER</h3>
+                        <div class="user-details">
+                            <p><strong>Age:</strong> 29</p>
+                            <p><strong>Gender:</strong> Female</p>
+                            <p><strong>Location:</strong> New York City, NY</p>
+                            <p><strong>Occupation:</strong> Software Developer</p>
+                            <p><strong>Interests:</strong> Hiking, photography, reading, cooking</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <form id="create-form">
+                    <h2>Add new book:</h2>
+                    <div class="col col-6 col-s-10">
+                        <label for="create-title">Title:</label>
+                        <input type="text" id="create-title" required>
+
+                        <label for="create-author">Author:</label>
+                        <input type="text" id="create-author" required>
+
+                        <label for="create-genre">Genre:</label>
+                        <input type="text" id="create-genre" required>
+                    </div>
+                    <div class="col col-6 col-s-10">
+                        <label for="create-price">Price:</label>
+                        <input type="number" id="create-price" min="0" step="0.01" required>
+
+                        <label for="create-owner">Owner:</label>
+                        <input type="text" id="create-owner" required>
+
+                        <label for="create-image">Image:</label>
+                        <input type="file" id="create-image" accept="image/*" required>
+                        <label for="preview-section">Image Preview:</label>
+                        <div id="preview-section"></div>
+                    </div>
+
+                    <button type="submit">Create Book</button>
+                </form>
+            </section>
+
+        </profile>
+
         <!--======== Instant Search Filter ========-->
         <div class="filtering">
             <div class="filter-form">
-                <form>
-                    <div class="row no-margin">
-                        <div class="col-2">
-                            <div class="form-header">
-                                <h2>Instant Search</h2>
-                            </div>
-                        </div>
-                        <div class="col-8">
-
-                            <div class="filter-cat">
-                                <div class="col col-3 col-s-3">
-                                    <div class="form-group">
-                                        <span class="form-label">Duration Stay</span>
-                                        <select class="form-control cat1">
-                                            <option value="cat-all">Any Available</option>
-                                            <option value="cat-ds1">1-2 nights</option>
-                                            <option value="cat-ds2">2-5 nights</option>
-                                            <option value="cat-ds3">5 and more nights</option>
-                                        </select>
-                                        <span class="select-arrow"></span>
-                                    </div>
-                                </div>
-                                <div class="col col-3 col-s-3">
-                                    <div class="form-group">
-                                        <span class="form-label">Guests Amount</span>
-                                        <select class="form-control cat2">
-                                            <option value="cat-all">Any amount</option>
-                                            <option value="cat-ga1">1-2</option>
-                                            <option value="cat-ga2">2-4</option>
-                                            <option value="cat-ga3">4-6</option>
-                                            <option value="cat-ga4">6 and more</option>
-                                        </select>
-                                        <span class="select-arrow"></span>
-                                    </div>
-                                </div>
-                                <div class="col col-3 col-s-3">
-                                    <div class="form-group">
-                                        <span class="form-label">Price Range</span>
-                                        <select class="form-control cat3">
-                                            <option value="cat-all">All Prices</option>
-                                            <option value="cat-pr1">less NZ$200</option>
-                                            <option value="cat-pr2">NZ$200-NZ$300</option>
-                                            <option value="cat-pr3">NZ$300-NZ$400</option>
-                                            <option value="cat-pr4">NZ$400 more</option>
-                                        </select>
-                                        <span class="select-arrow"></span>
-                                    </div>
-                                </div>
-                                <div class="col col-3 col-s-3">
-                                    <div class="form-group">
-                                        <span class="form-label">Breakfast</span>
-                                        <select class="form-control cat4">
-                                            <option value="cat-all">Any Options</option>
-                                            <option value="cat-bin">Included</option>
-                                            <option value="cat-bnin">Not Included</option>
-                                        </select>
-                                        <span class="select-arrow"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn-flt" id="filterbutton">Scroll to Results</button>
-                    </div>
-                </form>
-
-            </div>
-            <profile>
-                <section>
-
-                    <h2>My Profile:</h2>
-                      <div class="col col-12 col-s-12">
-                        <div class="user-profile">
-                            <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Profile picture" class="profile-picture">
-                            <h3 class="username">TEST USER</h3>
-                            <div class="user-details">
-                                <p><strong>Age:</strong> 29</p>
-                                <p><strong>Gender:</strong> Female</p>
-                                <p><strong>Location:</strong> New York City, NY</p>
-                                <p><strong>Occupation:</strong> Software Developer</p>
-                                <p><strong>Interests:</strong> Hiking, photography, reading, cooking</p>
-                            </div>
+                <div class="row no-margin">
+                    <div class="col-3">
+                        <div class="form-header">
+                            <h2>Instant Search=</h2>
                         </div>
                     </div>
-                </section>
-                <section>
-                    <form id="create-form">
-                        <h2>Add new book:</h2>
-                        <div class="col col-6 col-s-10">
-                            <label for="create-title">Title:</label>
-                            <input type="text" id="create-title" required>
-
-                            <label for="create-author">Author:</label>
-                            <input type="text" id="create-author" required>
-
-                            <label for="create-genre">Genre:</label>
-                            <input type="text" id="create-genre" required>
-                        </div>
-                        <div class="col col-6 col-s-10">
-                            <label for="create-price">Price:</label>
-                            <input type="number" id="create-price" min="0" step="0.01" required>
-
-                            <label for="create-owner">Owner:</label>
-                            <input type="text" id="create-owner" required>
-
-                            <label for="create-image">Image:</label>
-                            <input type="file" id="create-image" accept="image/*" required>
-                            <label for="preview-section">Image Preview:</label>
-                            <div id="preview-section"></div>
-                        </div>
-
-                        <button type="submit">Create Book</button>
-                    </form>
-                </section>
-
-            </profile>
-            <!--======== Edit Book Form ========-->
-            <!--<div id="edit-wrapper">
-        <form id="edit-form">
-            <input type="text" id="edit-title" placeholder="Title">
-            <input type="text" id="edit-author" placeholder="Author">
-            <input type="text" id="edit-genre" placeholder="Genre">
-            <input type="number" id="edit-price" placeholder="Price">
-            <input type="text" id="edit-owner" placeholder="Owner">
-            <input type="file" id="edit-image">
-            <button type="submit" id="save-changes-btn">Save Changes</button>
-        </form>
-    </div>-->
-            <!--<div class="edit-wrapper">
-        <form action="" class="form">
-            <h2>Edit Book Form</h2>
-
-            <div class="control">
-                <label for="">Title:</label>
-                <input type="text" id="edit-title" placeholder="Title">
-            </div>
-            <div class="control">
-                <label for="">Author:</label>
-                <input type="text" id="edit-author" placeholder="Author">
-            </div>
-            <div class="control">
-                <label for="">Genre:</label>
-                <input type="text" id="edit-genre" placeholder="Genre">
-            </div>
-
-            <div class="control">
-                <label for="">Price:</label>
-                <input type="number" id="edit-price" placeholder="Price">
-            </div>
-            <div class="control">
-                <label for="">Owner:</label>
-                <input type="text" id="edit-owner" placeholder="Owner">
-            </div>
-            <div class="control">
-                <label for="">Image:</label>
-                <input type="file" id="edit-image">
-            </div>
-            <button type="submit" id="save-changes-btn">Save Changes</button>
-        </form>
-
-        <div class="close-ca-form">
-            <i class="bx bx-x"></i>
-        </div>
-    </div>-->
-            <!--======== Instant Search Filter Results ========-->
-            <div>
-                <h2>My Bookstore:</h2>
-                <br>
-                <books id="books-container">
-                </books>
-                <h2>All Bookstore:</h2>
-                <books id="books-container">
-
-                    <section>
-                        <img src="./assets/images/book1.jpg" height="330">
-                        <br>
-                        <div class="row">
-                            <div class="col col-6 col-s-6">
-                                <p><tl><span id="book-title">The Great Gatsby</span></tl></p>
-                            </div>
-                            <div class="col-6 col-s-6">
-                                <p><prc><span id="book-price">15.99</span></prc></p>
-                            </div>
-                        </div>
-
-                        <dsc>
-                            <p>Author: <span id="book-author"></span></p>
-                            <p>Genre: <span id="book-genre"></span></p>
-                            <p>Owner: <span id="book-owner"></span></p>
-
-                            <p>
-                                Rating:
-                                <opts>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </opts>
-
-                            </p>
-
-
-                        </dsc>
-
-                        <br>
-                        <button class="btn my-cart-btn" data-id="42" data-name="The Great Gatsby" data-price="15.99" data-quantity="1" data-image="./assets/images/book1.jpg">Add to Cart</button>
-                        <button class="btn">Book Details</button>
-                    </section>
-
-
-                    <section>
-                        <!--The image copied from https://www.paperplus.co.nz/ and used only for development purposes-->
-                        <img src="./assets/images/book.jpg" height="330">
-                        <br>
-                        <div class="row">
-                            <div class="col col-6 col-s-6">
-                                <p><tl><span id="book-title">New Book Title</span></tl></p>
-                            </div>
-                            <div class="col-6 col-s-6">
-                                <p><prc><span id="book-price">9.99</span></prc></p>
-                            </div>
-                        </div>
-
-                        <dsc>
-                            <p>Author: <span id="book-author">NewBookAuthor</span></p>
-                            <p>Genre: <span id="book-genre">NewGenre</span></p>
-                            <p>Owner: <span id="book-owner">NewOwner</span></p>
-
-                            <p>
-                                Rating:
-                                <opts>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </opts>
-
-                            </p>
-
-
-                        </dsc>
-
-                        <br>
-                        <button class="btn my-cart-btn" data-id="43" data-name="NewBookAuthor" data-price="9.99" data-quantity="1" data-image="./assets/images/book.jpg">Add to Cart</button>
-                        <button class="btn">Book Details</button>
-                    </section>
-
-                </books>
+                    <div class="col-9">
+                        <form id="search-bar">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!--======== Instant Search Filter Results ========-->
+        <div class="filter-cat-results">
+            <h2>My Bookstore:</h2>
+            <br>
+            <books id="books-container">
+            </books>
+            <h2>All Bookstore:</h2>
+            <books id="books-container-all">
+                <section data-static-book-id="1" class="f-cat active">
+                    <img height="330" src="./assets/images/book1.jpg">
+                    <br><div class="row">
+                        <div class="col col-6 col-s-6">
+                            <p><tl><span id="book-title">ljkjklljkkj</span></tl></p>
+                        </div><div class="col-6 col-s-6"><p><prc><span id="book-price">978879</span></prc></p></div>
+                    </div><p>
+                        <dsc>
+                            <p>Author: <span id="book-author">Vasilisa</span></p>
+                            <p>Genre: <span id="book-genre">fantastic</span></p>
+                            <p>Owner: <span id="book-owner">Bookstore</span></p><p>
+                                Rating: <opts>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </opts><br><br>
+                            </p>
+                        </dsc>
+                    </p><button class="btn my-cart-btn" data-id="41" data-name="The Great Gatsby" data-price="15.99" data-quantity="1" data-image="./assets/images/book1.jpg">Add to Cart</button>
+                    <button class="btn book-details-btn" data-static-book-id="1">Book Details</button>
+                    <button class="btn edit-btn">Edit</button>
+                    <div class="btn-container"></div>
+                    <button class="btn remove-btn">Remove</button>
+                </section>
+
+                <section data-static-book-id="2" class="f-cat active">
+                    <img src="./assets/images/book1.jpg" height="330">
+                    <br>
+                    <div class="row">
+                        <div class="col col-6 col-s-6">
+                            <p><tl><span id="book-title">The Great Gatsby</span></tl></p>
+                        </div>
+                        <div class="col-6 col-s-6">
+                            <p><prc><span id="book-price">15.99</span></prc></p>
+                        </div>
+                    </div>
+
+                    <dsc>
+                        <p>Author: <span id="book-author"></span></p>
+                        <p>Genre: <span id="book-genre"></span></p>
+                        <p>Owner: <span id="book-owner"></span></p>
+
+                        <p>
+                            Rating:
+                            <opts>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </opts>
+
+                        </p>
+
+
+                    </dsc>
+
+                    <br>
+                    <button class="btn my-cart-btn" data-id="42" data-name="The Great Gatsby" data-price="15.99" data-quantity="1" data-image="./assets/images/book1.jpg">Add to Cart</button>
+                    <button class="btn book-details-btn" data-static-book-id="2">Book Details</button>
+                </section>
+
+
+                <section data-static-book-id="3" class="f-cat active">
+                    <!--The image copied from https://www.paperplus.co.nz/ and used only for development purposes-->
+                    <img src="./assets/images/book.jpg" height="330">
+                    <br>
+                    <div class="row">
+                        <div class="col col-6 col-s-6">
+                            <p><tl><span id="book-title">New Book Title</span></tl></p>
+                        </div>
+                        <div class="col-6 col-s-6">
+                            <p><prc><span id="book-price">9.99</span></prc></p>
+                        </div>
+                    </div>
+
+                    <dsc>
+                        <p>Author: <span id="book-author">NewBookAuthor</span></p>
+                        <p>Genre: <span id="book-genre">NewGenre</span></p>
+                        <p>Owner: <span id="book-owner">NewOwner</span></p>
+
+                        <p>
+                            Rating:
+                            <opts>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </opts>
+
+                        </p>
+
+
+                    </dsc>
+
+                    <br>
+                    <button class="btn my-cart-btn" data-id="43" data-name="NewBookAuthor" data-price="9.99" data-quantity="1" data-image="./assets/images/book.jpg">Add to Cart</button>
+                    <button class="btn book-details-btn" data-static-book-id="3">Book Details</button>
+                </section>
+
+            </books>
+        </div>
+
     </main>
+
     <!--======== Footer ========-->
     <footer id="bottom">
         <!--<footer id="bottom">
@@ -412,11 +389,11 @@
     <script type='text/javascript' src="./assets/scripts/jquery-2.2.3.min.js"></script>
     <script type='text/javascript' src="./assets/scripts/jquery-ui.1.12.1.min.js"></script>
     <script type='text/javascript' src="./assets/scripts/bootstrap.min.js"></script>
-    <!--<script type='text/javascript' src="./assets/scripts/book.now.filter.js"></script>
-    <script type='text/javascript' src="./assets/scripts/book.now.form.js"></script>-->
-    <script type='text/javascript' src="./assets/scripts/app.full.v2.js"></script>
+    <script type='text/javascript' src="./assets/scripts/app.book.full.js"></script>
+    <script type='text/javascript' src="./assets/scripts/app.book.static.js"></script>
     <script type='text/javascript' src="./assets/scripts/app.cart.js"></script>
     <script type='text/javascript' src="./assets/scripts/app.cart.min.js"></script>
+    <script type='text/javascript' src="./assets/scripts/app.search.js"></script>
     <script src="./assets/scripts/scroll.js"></script>
     <script src="./assets/scripts/navi.js"></script>
     <script src="./assets/scripts/top.js"></script>

@@ -15,6 +15,9 @@
             classProductQuantity: 'my-product-quantity',
             classProductRemove: 'my-product-remove',
             classCheckoutCart: 'my-cart-checkout',
+            classCreditCardNumber: 'my-credit-card-number',
+            classCreditCardExpiry: 'my-credit-card-expiry',
+            classCreditCardCVC: 'my-credit-card-cvc',
             affixCartIcon: true,
             showCheckoutModal: true,
             numberOfDecimals: 2,
@@ -22,7 +25,7 @@
             clickOnAddToCart: function ($addTocart) { },
             afterAddOnCart: function (products, totalPrice, totalQuantity) { },
             clickOnCartIcon: function ($cartIcon, products, totalPrice, totalQuantity) { },
-            checkoutCart: function (products, totalPrice, totalQuantity) {
+            checkoutCart: function (products, totalPrice, totalQuantity, creditCardDetails) {
                 return false;
             },
             getDiscountPrice: function (products, totalPrice, totalQuantity) {
@@ -274,7 +277,38 @@
                     '<td></td>' +
                     '<td class="text-right"><strong id="' + idDiscountPrice + '"></strong></td>' +
                     '<td></td>' +
+                    '</tr>'+
+                    '<tr>' +
+                    '<td colspan="10">' +
+                    '<div class="row">' +
+                    '<div class="col-sm-10">' +
+                    '<div class="form-group">' +
+                    '<label for="cardName">Card Name:</label>' +
+                    '<input type="text" class="form-credit-card" id="cardNumber" placeholder="Enter credit card name">' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-sm-10">' +
+                    '<div class="form-group">' +
+                    '<label for="cardNumber">Credit Card Number:</label>' +
+                    '<input type="text" class="form-credit-card" id="cardNumber" placeholder="Enter credit card number">' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-sm-10">' +
+                    '<div class="form-group">' +
+                    '<label for="cardExpiration">Expiration Date:</label>' +
+                    '<input type="text" class="form-credit-card" id="cardExpiration" placeholder="Enter expiration date">' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-sm-10">' +
+                    '<div class="form-group">' +
+                    '<label for="cardCVV">CVV</label>' +
+                    '<input type="text" class="form-credit-card" id="cardExpiration" placeholder="Enter Name CVV digits">' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</td>' +
                     '</tr>'
+                            
                 );
             }
 

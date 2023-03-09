@@ -260,10 +260,15 @@ books section {
         width: 100%;
     }
 }
+
+/* === User Profile Layout ==== */
 profile {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     justify-content: center;
     gap: 15px;
 }
@@ -282,6 +287,7 @@ profile {
 @media only screen and (max-width: 768px) {
     profile {
         gap: 10px;
+        grid-template-columns: 1fr;
     }
 }
 

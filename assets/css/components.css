@@ -49,6 +49,29 @@
         text-shadow: 2px 2px 4px #000000;
     }
 
+.btn-unv {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fbf7ee;
+    border: 1px solid black;
+    border-color: #e7e7e7;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+    /*.btn-unv:hover {
+        background-color: #2A55B1;
+        border-color: 1px solid rgb(180, 207, 231);
+        color: #fbf7ee;
+        text-shadow: 2px 2px 4px #000000;
+    }*/
+
 .btn-sec {
     justify-content: end;
     background-color: rgba(0, 0, 0, 0.4);
@@ -841,6 +864,7 @@ p {
     border: 1px solid rgba(60, 64, 101, 0.1);
     border-radius: 10px;
     background-color: #FAFAFA;
+    margin-top: 15px;
 }
 
 
@@ -855,12 +879,18 @@ p {
         }
 
     .filter-form .form-header {
-        padding: 15px 10px;
-        height: 110px;
-        padding-top: 4em;
-        text-align: center;
+        text-align: right;
     }
-
+    .filter-form input {
+        padding: 15px 10px;
+        text-align: left;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+        width: 95%
+    }
         .filter-form .form-header h2 {
             margin: 0;
             display: inline-block;
@@ -1059,7 +1089,7 @@ p {
         cursor: pointer;
         display: block;
         text-align: center;
-        width: 20%;
+        width: 30%;
         margin: 0 auto;
         text-decoration: none;
         text-transform: uppercase;
@@ -1629,12 +1659,12 @@ a.text-danger:focus {
     box-shadow: lightgrey;
     border-radius: 0.5rem;
     margin: 2rem;
-    margin-top: 45rem;
+    margin-top: 25rem;
 }
 
 @media only screen and (max-width: 400px) {
     .edit-wrapper form {
-        margin-top: 55rem;
+        margin-top: 35rem;
     }
 }
 
@@ -1775,6 +1805,8 @@ a.text-danger:focus {
     border-radius: 10px;
     background-color: #FAFAFA;
 }*/
+
+/* === User Profile ==== */
 .user-profile {
     display: flex;
     flex-direction: column;
@@ -1809,3 +1841,6 @@ a.text-danger:focus {
         font-weight: bold;
     }
 
+.form-credit-card {
+    width: 100%;
+}
