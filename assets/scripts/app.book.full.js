@@ -202,18 +202,18 @@ function createBook(title, author, genre, price, owner, image, id) {
 
     // Create the buttons
     
+    const btnContainer = document.createElement("btn-container");
     
-
     const cartBtn = document.createElement("button");
     cartBtn.setAttribute("class", "btn-unv");
     cartBtn.setAttribute("title", "You can't buy your own products");
     cartBtn.textContent = "Add to Cart";
-    newSection.appendChild(cartBtn);
+    btnContainer.appendChild(cartBtn);
 
     const detailsBtn = document.createElement("button");
     detailsBtn.setAttribute("class", "btn");
     detailsBtn.textContent = "Book Details";
-    newSection.appendChild(detailsBtn);
+    btnContainer.appendChild(detailsBtn);
 
     // Add event listener to the "Book Details" button
     detailsBtn.addEventListener("click", () => {
@@ -226,16 +226,15 @@ function createBook(title, author, genre, price, owner, image, id) {
     const editBtn = document.createElement("button");
     editBtn.setAttribute("class", "btn edit-btn");
     editBtn.textContent = "Edit";
-    newSection.appendChild(editBtn);
-
-    newSection.appendChild(editContainer);
-
+    btnContainer.appendChild(editBtn);
+    
     const removeBtn = document.createElement("button");
     removeBtn.setAttribute("class", "btn remove-btn");
     removeBtn.textContent = "Remove";
-    newSection.appendChild(removeBtn);
+    btnContainer.appendChild(removeBtn);
 
-    
+    newSection.appendChild(btnContainer);
+    newSection.appendChild(editContainer);
 
     // Add event listeners to the edit and remove buttons
     editBtn.addEventListener("click", () => {

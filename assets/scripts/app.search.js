@@ -2,7 +2,7 @@ function initSearch() {
     // Create the search input field
     const searchInput = document.createElement("input");
     searchInput.setAttribute("type", "text");
-    searchInput.setAttribute("placeholder", "Search books...");
+    searchInput.setAttribute("placeholder", "Search books by Title, Author, Genre...");
 
     // Add event listener to search input field
     searchInput.addEventListener("input", function () {

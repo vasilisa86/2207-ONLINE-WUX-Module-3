@@ -221,6 +221,14 @@ books section {
     background-color: #FAFAFA;
 }
 
+    books section btn-container {
+        position: sticky;
+        top: 92%;
+        left: 5%;
+    }
+
+/* Add more styles for additional buttons as needed */
+
     books section img {
         width: 100%;
         padding: 0px;
@@ -234,11 +242,11 @@ books section {
         font-size: large;
         word-spacing: 1px;
         font-weight: bold;
-        color: #2A55B1;
+        color: #5B6E74;
     }
 
     books section prc {
-        color: #EC2623;
+        color: #D77E5E;
         font-size: large;
         text-shadow: 2px 2px 4px #00000151;
         font-weight: bold;
