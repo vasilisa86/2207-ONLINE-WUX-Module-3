@@ -159,12 +159,12 @@
 
 .title {
     padding-top: 120px;
-    padding-right: 50px;
-    text-align: right;
-    color: #EC2623;
+    padding-left: 50px;
+    text-align: left;
+    color: #5B6E74;
     margin-bottom: 30px;
     font-size: 40px;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 3px 2px 1px #D6A3A7;
 }
 
 .box {

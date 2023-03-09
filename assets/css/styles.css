@@ -39,7 +39,7 @@ label {
 .form__button {
     width: 100%;
     margin-top: 15px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #5B6E74;
     color: #fbf7ee;
     border: 1px solid black;
     border-color: #e7e7e7;
@@ -51,7 +51,7 @@ label {
 }
 
     .form__button:hover {
-        background-color: #2A55B1;
+        background-color: #D77E5E;
         border-color: 1px solid rgb(180, 207, 231);
         color: #fbf7ee;
         text-shadow: 2px 2px 4px #000000;
