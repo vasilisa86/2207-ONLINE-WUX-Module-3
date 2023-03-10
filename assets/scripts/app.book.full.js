@@ -468,15 +468,15 @@ function showBookDetails(id) {
 
     // Create a new div element with the required attributes
     const detailsWrapper = document.createElement("div");
-    detailsWrapper.setAttribute("class", "book-details-wrapper");
+    detailsWrapper.classList.add("book-details-wrapper");
 
     // Create a new section element with the required attributes
     const detailsSection = document.createElement("section");
-    detailsSection.setAttribute("class", "book-details");
+    detailsSection.classList.add("book-details");
     detailsSection.setAttribute("data-book-id", book.id);
 
     const detailsSectionRow = document.createElement("div");
-    detailsSectionRow.setAttribute("class", "row")
+    detailsSectionRow.classList.add("row");
     detailsSection.appendChild(detailsSectionRow);
 
     // Create the image element with the required attributes
@@ -486,43 +486,28 @@ function showBookDetails(id) {
     bookImage.addEventListener("error", () => {
         bookImage.setAttribute("src", "./assets/images/book.jpg");
     });
-    
+
     // Create the title and price elements with the required attributes
     const titleElem = document.createElement("span");
-    titleElem.setAttribute("id", "book-title");
+    titleElem.classList.add("book-title");
     titleElem.textContent = book.title;
 
-    const titleLabel = document.createElement("label");
-    titleLabel.setAttribute("for", "book-title");
-    titleLabel.textContent = "Book Details: ";
-
     const priceElem = document.createElement("span");
-    priceElem.setAttribute("id", "book-price");
+    priceElem.classList.add("book-price");
     priceElem.textContent = book.price;
 
-    const titlePriceP = document.createElement("p");
-    
+    const titlePriceDiv = document.createElement("div");
+    titlePriceDiv.classList.add("book-title-price");
 
-    const titleDiv = document.createElement("p");
-    const titleP = document.createElement("p");
-    const titleTl = document.createElement("tl");
-    titleTl.appendChild(titleLabel);
-    titleTl.appendChild(titleElem);
-    titleP.appendChild(titleTl);
-    titleDiv.appendChild(titleP);
+    titlePriceDiv.appendChild(titleElem);
+    titlePriceDiv.appendChild(priceElem);
 
-    const priceDiv = document.createElement("p");
-    const priceP = document.createElement("p");
-    const pricePrc = document.createElement("prc");
-    pricePrc.appendChild(priceElem);
-    priceP.appendChild(pricePrc);
-    priceDiv.appendChild(priceP);
 
     const descriptionDiv = document.createElement("div");
-    descriptionDiv.setAttribute("class", "col col-6");
+    descriptionDiv.classList.add("book-desc", "col", "col-4", "col-s-4");
 
     const commentsDiv = document.createElement("div");
-    commentsDiv.setAttribute("class", "col col-6");
+    commentsDiv.classList.add("book-comms", "col", "col-8", "col-s-8");
 
     const commentsLabel = document.createElement("label");
     commentsLabel.setAttribute("for", "book-comments");
@@ -587,16 +572,7 @@ function showBookDetails(id) {
         commentsTextInput.value = "";
     });
 
-    descriptionDiv.appendChild(bookImage);
-    descriptionDiv.appendChild(document.createElement("br"));
-    titlePriceP.appendChild(titleDiv);
-    titlePriceP.appendChild(priceDiv);
-    descriptionDiv.appendChild(titlePriceP);
-    detailsWrapper.appendChild(detailsSection);
-    detailsSectionRow.appendChild(descriptionDiv);
-    detailsSectionRow.appendChild(commentsDiv);
-    
-    
+
     // Create the description element with the required attributes
     const authorElem = document.createElement("span");
     authorElem.setAttribute("id", "book-author");
@@ -623,7 +599,6 @@ function showBookDetails(id) {
     ratingElem.appendChild(document.createElement("br"));
     ratingElem.appendChild(document.createElement("br"));
 
-    const descriptionP = document.createElement("p");
     const descriptionDsc = document.createElement("dsc");
     const authorP = document.createElement("p");
     authorP.textContent = "Author: ";
@@ -639,9 +614,16 @@ function showBookDetails(id) {
     descriptionDsc.appendChild(genreP);
     descriptionDsc.appendChild(ownerP);
     descriptionDsc.appendChild(ratingElem);
-    descriptionP.appendChild(descriptionDsc);
-    descriptionDiv.appendChild(descriptionP);
-    
+
+    // Append the elements to the description div
+
+    descriptionDiv.appendChild(bookImage);
+    descriptionDiv.appendChild(document.createElement("br"));
+    descriptionDiv.appendChild(titlePriceDiv);
+    descriptionDiv.appendChild(descriptionDsc);
+    detailsWrapper.appendChild(detailsSection);
+    detailsSectionRow.appendChild(descriptionDiv);
+    detailsSectionRow.appendChild(commentsDiv);
 
     // Create the close button
     const closeButton = document.createElement("button");
@@ -659,8 +641,8 @@ function showBookDetails(id) {
 
     detailsWrapper.classList.add('book-details-show');
 
-   
-   
+
+
 }
 
 
