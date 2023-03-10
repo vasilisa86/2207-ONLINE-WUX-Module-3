@@ -10,8 +10,24 @@
 body,
 html {
     height: 100%;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Angleterre Book', sans-serif;
     /*scroll-behavior: smooth;*/
+}
+
+h1 {
+    color: #5B6E74;
+    margin-bottom: 30px;
+    font-size: 60px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h2 {
+    /* margin-bottom: 50px; */
+    font-family: 'Beyond Wonderland', sans-serif;
+    text-align: center;
+    color: #5B6E74;
+    text-transform: uppercase;
+    font-size: 30px;
 }
 
 .form__input,

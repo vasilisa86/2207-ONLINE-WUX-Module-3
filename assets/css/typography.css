@@ -1,12 +1,9 @@
-h1 {
-    color: #5B6E74;
-    margin-bottom: 30px;
-    font-size: 60px;
-    text-shadow: 2px 2px 4px #000000;
+@font-face {
+    font-family: 'Beyond Wonderland'; 
+    src: url('./fonts/Beyond-Wonderland.ttf');
 }
 
-h2 {
-    /* margin-bottom: 50px; */
-    text-align: center;
-    color: #5B6E74;
+@font-face {
+    font-family: 'Angleterre Book';
+    src: url('./fonts/angltrr.ttf');
 }
