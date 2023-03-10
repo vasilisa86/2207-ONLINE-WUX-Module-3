@@ -531,6 +531,11 @@
             <a href="tel:022682366">contact us</a>
         </div>-->
         <button onclick="topFunction()" id="topbtn" title="Go to top">Top</button>
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./assets/scripts/app.sw.js');
+            }
+        </script>
     </footer>
     <!--======== All JS ========-->
     <script type='text/javascript' src="./assets/scripts/jquery-2.2.3.min.js"></script>
@@ -541,6 +546,7 @@
     <script type='text/javascript' src="./assets/scripts/app.cart.js"></script>
     <script type='text/javascript' src="./assets/scripts/app.cart.min.js"></script>
     <script type='text/javascript' src="./assets/scripts/app.search.js"></script>
+    <script type='text/javascript' src="./assets/scripts/app.sw.js"></script>
     <script src="./assets/scripts/top.js"></script>
     <script src="./assets/scripts/navi.js"></script>
 
