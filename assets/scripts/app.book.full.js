@@ -674,9 +674,7 @@ function formatDate(timestamp) {
     )}`;
 }
 
-
 function addComment(comment) {
-
     const commentsList = document.querySelector("#comments-list");
 
     const commentWrapper = document.createElement("div");
@@ -684,10 +682,6 @@ function addComment(comment) {
 
     const commentText = document.createElement("p");
     commentText.textContent = comment.text;
-
-    const commentInput = document.createElement("textarea");
-    commentInput.setAttribute("id", "comment-input");
-    commentInput.setAttribute("name", "comment-input");
 
     const commentTimestamp = document.createElement("span");
     commentTimestamp.setAttribute("class", "comment-timestamp");
@@ -741,49 +735,35 @@ function addComment(comment) {
 
     commentsList.appendChild(commentWrapper);
 
-    /// Function to add a reply to the reply list
-    function addReply(reply, replyList) {
-        // Create a new list item element with the reply text
-        const replyItem = document.createElement("p");
-        replyItem.textContent = reply.text;
-
-        // Append the new list item to the reply list
-        replyList.appendChild(replyItem);
-    }
-    // Add event listener to the reply form
+    
     replyForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const replyInput = event.target.elements["comments-text"];
+        const replyInput = event.target.elements["reply-input"];
         const replyText = replyInput.value.trim();
 
-        const nameInput = event.target.elements["comments-name"];
-        const nameText = nameInput.value.trim();
-
-        if (!nameText) {
-            alert("Please enter your name.");
-            return;
-        }
-
         if (!replyText) {
-            alert("Please enter a comment.");
+            alert("Please enter a reply.");
             return;
         }
 
         const reply = {
             text: replyText,
             timestamp: new Date().toISOString(),
-            name: nameText,
         };
 
         addReply(reply, replyList);
 
         replyInput.value = "";
-        nameInput.value = "";
     });
-
 }
 
+function addReply(reply, replyList) {
+    const replyItem = document.createElement("p");
+    replyItem.textContent = reply.text;
+
+    replyList.appendChild(replyItem);
+}
 
 function showReplyForm(commentWrapper) {
     const replyFormWrapper = document.createElement("div");
@@ -806,7 +786,6 @@ function showReplyForm(commentWrapper) {
     const replyList = commentWrapper.querySelector(".reply-list");
     replyList.appendChild(replyFormWrapper);
 
-
     // Add event listener to the reply form
     replyForm.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -828,9 +807,8 @@ function showReplyForm(commentWrapper) {
 
         replyInput.value = "";
     });
-
-
 }
+
 
 
    
