@@ -179,7 +179,9 @@
     float: right;
     border-radius: 30px;
     padding: 10px;
-    width: 100%;
+    width: 60%;
+    height: 60%;
+    right: 0;
 }
 
 
